@@ -16,6 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+using System;
+using System.Windows.Forms;
+
 namespace mouse_click_simulator
 {
     public partial class MainForm : Form

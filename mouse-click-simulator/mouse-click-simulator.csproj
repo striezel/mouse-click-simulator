@@ -6,7 +6,7 @@
     <RootNamespace>mouse_click_simulator</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <Copyright>Copyright (C) 2022 Dirk Stolle</Copyright>
     <Description>Emulates mouse clicks on arbitrary windows.</Description>

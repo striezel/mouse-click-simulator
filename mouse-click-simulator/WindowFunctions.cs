@@ -17,6 +17,8 @@
 */
 
 using mouse_click_simulator.window_handling;
+using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 

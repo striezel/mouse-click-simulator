@@ -16,6 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+using System;
+using System.IO;
+
 namespace receiver_of_clicks
 {
     /// <summary>
@@ -33,12 +36,14 @@ namespace receiver_of_clicks
 
             // create targets and add them to the configuration 
             // --- rich text box
-            var textBoxTarget = new NLog.Windows.Forms.RichTextBoxTarget();
-            textBoxTarget.FormName = "ReceiverForm";
-            textBoxTarget.ControlName = "rtbLogging";
-            textBoxTarget.UseDefaultRowColoringRules = true;
-            textBoxTarget.CreatedForm = false;
-            textBoxTarget.Name = "rtb";
+            var textBoxTarget = new NLog.Windows.Forms.RichTextBoxTarget()
+            {
+                FormName = "ReceiverForm",
+                ControlName = "rtbLogging",
+                UseDefaultRowColoringRules = true,
+                CreatedForm = false,
+                Name = "rtb"
+            };
             config.AddTarget(textBoxTarget);
             // --- file
             var fileTarget = new NLog.Targets.FileTarget();
