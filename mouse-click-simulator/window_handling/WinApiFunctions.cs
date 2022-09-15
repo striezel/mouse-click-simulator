@@ -47,6 +47,9 @@ namespace mouse_click_simulator.window_handling
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 
+        [DllImport("user32.dll")]
+        internal static extern int PostMessage(IntPtr hwnd, WMConstants message, IntPtr wParam, IntPtr lParam);
+
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern int SendMessage(IntPtr hwnd, WMConstants message, int wParam, StringBuilder sb);
 

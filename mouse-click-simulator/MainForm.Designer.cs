@@ -53,6 +53,9 @@ namespace mouse_click_simulator
             this.lbWindows = new System.Windows.Forms.ListBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.gbClicks = new System.Windows.Forms.GroupBox();
+            this.gbSyncAsync = new System.Windows.Forms.GroupBox();
+            this.rbAsync = new System.Windows.Forms.RadioButton();
+            this.rbSynchronous = new System.Windows.Forms.RadioButton();
             this.btnStop = new System.Windows.Forms.Button();
             this.gbCoordinates = new System.Windows.Forms.GroupBox();
             this.lblCoordinateY = new System.Windows.Forms.Label();
@@ -70,6 +73,7 @@ namespace mouse_click_simulator
             this.timerClick = new System.Windows.Forms.Timer(this.components);
             this.gbWindows.SuspendLayout();
             this.gbClicks.SuspendLayout();
+            this.gbSyncAsync.SuspendLayout();
             this.gbCoordinates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoordY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoordX)).BeginInit();
@@ -120,6 +124,7 @@ namespace mouse_click_simulator
             // gbClicks
             // 
             this.gbClicks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbClicks.Controls.Add(this.gbSyncAsync);
             this.gbClicks.Controls.Add(this.btnStop);
             this.gbClicks.Controls.Add(this.gbCoordinates);
             this.gbClicks.Controls.Add(this.btnStart);
@@ -132,9 +137,44 @@ namespace mouse_click_simulator
             this.gbClicks.TabStop = false;
             this.gbClicks.Text = "Click properties:";
             // 
+            // gbSyncAsync
+            // 
+            this.gbSyncAsync.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbSyncAsync.Controls.Add(this.rbAsync);
+            this.gbSyncAsync.Controls.Add(this.rbSynchronous);
+            this.gbSyncAsync.Location = new System.Drawing.Point(6, 292);
+            this.gbSyncAsync.Name = "gbSyncAsync";
+            this.gbSyncAsync.Size = new System.Drawing.Size(367, 60);
+            this.gbSyncAsync.TabIndex = 5;
+            this.gbSyncAsync.TabStop = false;
+            this.gbSyncAsync.Text = "Message dispatch";
+            // 
+            // rbAsync
+            // 
+            this.rbAsync.AutoSize = true;
+            this.rbAsync.Location = new System.Drawing.Point(179, 26);
+            this.rbAsync.Name = "rbAsync";
+            this.rbAsync.Size = new System.Drawing.Size(99, 19);
+            this.rbAsync.TabIndex = 1;
+            this.rbAsync.Text = "asynchronous";
+            this.rbAsync.UseVisualStyleBackColor = true;
+            // 
+            // rbSynchronous
+            // 
+            this.rbSynchronous.AutoSize = true;
+            this.rbSynchronous.Checked = true;
+            this.rbSynchronous.Location = new System.Drawing.Point(47, 26);
+            this.rbSynchronous.Name = "rbSynchronous";
+            this.rbSynchronous.Size = new System.Drawing.Size(93, 19);
+            this.rbSynchronous.TabIndex = 0;
+            this.rbSynchronous.TabStop = true;
+            this.rbSynchronous.Text = "synchronous";
+            this.rbSynchronous.UseVisualStyleBackColor = true;
+            // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(175, 292);
+            this.btnStop.Location = new System.Drawing.Point(175, 358);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 4;
@@ -144,6 +184,8 @@ namespace mouse_click_simulator
             // 
             // gbCoordinates
             // 
+            this.gbCoordinates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbCoordinates.Controls.Add(this.lblCoordinateY);
             this.gbCoordinates.Controls.Add(this.lblCoordinateX);
             this.gbCoordinates.Controls.Add(this.numericUpDownCoordY);
@@ -199,7 +241,7 @@ namespace mouse_click_simulator
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(94, 292);
+            this.btnStart.Location = new System.Drawing.Point(94, 358);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 2;
@@ -254,12 +296,14 @@ namespace mouse_click_simulator
             // 
             // gbMouseButtons
             // 
+            this.gbMouseButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbMouseButtons.Controls.Add(this.cbMiddleMouseButton);
             this.gbMouseButtons.Controls.Add(this.cbRightMouseButton);
             this.gbMouseButtons.Controls.Add(this.cbLeftMouseButton);
             this.gbMouseButtons.Location = new System.Drawing.Point(6, 22);
             this.gbMouseButtons.Name = "gbMouseButtons";
-            this.gbMouseButtons.Size = new System.Drawing.Size(348, 103);
+            this.gbMouseButtons.Size = new System.Drawing.Size(367, 103);
             this.gbMouseButtons.TabIndex = 0;
             this.gbMouseButtons.TabStop = false;
             this.gbMouseButtons.Text = "Mouse buttons";
@@ -311,6 +355,8 @@ namespace mouse_click_simulator
             this.Text = "Mouse click simulator";
             this.gbWindows.ResumeLayout(false);
             this.gbClicks.ResumeLayout(false);
+            this.gbSyncAsync.ResumeLayout(false);
+            this.gbSyncAsync.PerformLayout();
             this.gbCoordinates.ResumeLayout(false);
             this.gbCoordinates.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoordY)).EndInit();
@@ -345,5 +391,8 @@ namespace mouse_click_simulator
         private Label lblCoordinateX;
         private Button btnStop;
         private Timer timerClick;
+        private GroupBox gbSyncAsync;
+        private RadioButton rbAsync;
+        private RadioButton rbSynchronous;
     }
 }

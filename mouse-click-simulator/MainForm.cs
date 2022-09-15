@@ -176,23 +176,76 @@ namespace mouse_click_simulator
             }
         }
 
+        private static void SimulateMouseClickAsync(WindowData window, IntPtr coordinates, MouseButtons button)
+        {
+            switch (button)
+            {
+                case MouseButtons.Left:
+                    WinApi.PostMessage(window.Handle, WinApi.WMConstants.WM_LBUTTONDOWN, IntPtr.Zero, coordinates);
+                    WinApi.PostMessage(window.Handle, WinApi.WMConstants.WM_LBUTTONUP, IntPtr.Zero, coordinates);
+                    break;
+                case MouseButtons.Right:
+                    WinApi.PostMessage(window.Handle, WinApi.WMConstants.WM_RBUTTONDOWN, IntPtr.Zero, coordinates);
+                    WinApi.PostMessage(window.Handle, WinApi.WMConstants.WM_RBUTTONUP, IntPtr.Zero, coordinates);
+                    break;
+                case MouseButtons.Middle:
+                    WinApi.PostMessage(window.Handle, WinApi.WMConstants.WM_MBUTTONDOWN, IntPtr.Zero, coordinates);
+                    WinApi.PostMessage(window.Handle, WinApi.WMConstants.WM_MBUTTONUP, IntPtr.Zero, coordinates);
+                    break;
+                case MouseButtons.XButton1:
+                case MouseButtons.XButton2:
+                case MouseButtons.None:
+                default:
+                    // No simulation capability provided.
+                    break;
+            }
+        }
+
+        private void EmitClickEventsAsync(WindowData window, IntPtr coordinates)
+        {
+            if (cbLeftMouseButton.Checked)
+            {
+                SimulateMouseClickAsync(window, coordinates, MouseButtons.Left);
+            }
+            if (cbRightMouseButton.Checked)
+            {
+                SimulateMouseClickAsync(window, coordinates, MouseButtons.Right);
+            }
+            if (cbMiddleMouseButton.Checked)
+            {
+                SimulateMouseClickAsync(window, coordinates, MouseButtons.Middle);
+            }
+        }
+
+        private void EmitClickEventsSync(WindowData window, IntPtr coordinates)
+        {
+            if (cbLeftMouseButton.Checked)
+            {
+                SimulateMouseClick(window, coordinates, MouseButtons.Left);
+            }
+            if (cbRightMouseButton.Checked)
+            {
+                SimulateMouseClick(window, coordinates, MouseButtons.Right);
+            }
+            if (cbMiddleMouseButton.Checked)
+            {
+                SimulateMouseClick(window, coordinates, MouseButtons.Middle);
+            }
+        }
+
         private void EmitClickEvents(WindowData window)
         {
             int coordinates = WinApi.CoordinatesToLParam(Convert.ToInt32(numericUpDownCoordX.Value), Convert.ToInt32(numericUpDownCoordY.Value));
             IntPtr coordParam = new(coordinates);
-
-            if (cbLeftMouseButton.Checked)
+            bool asynchronous = rbAsync.Checked;
+            if (asynchronous)
             {
-                SimulateMouseClick(window, coordParam, MouseButtons.Left);
+                EmitClickEventsAsync(window, coordParam);
             }
-            if (cbRightMouseButton.Checked)
+            else
             {
-                SimulateMouseClick(window, coordParam, MouseButtons.Right);
-            }
-            if (cbMiddleMouseButton.Checked)
-            {
-                SimulateMouseClick(window, coordParam, MouseButtons.Middle);
-            }
+                EmitClickEventsSync(window, coordParam);
+            }                
         }
 
         void EnableOrDisableClickPropertyChanges(bool enable)
@@ -203,6 +256,8 @@ namespace mouse_click_simulator
             numericUpDownInterval.Enabled = enable;
             numericUpDownCoordX.Enabled = enable;
             numericUpDownCoordY.Enabled = enable;
+            rbSynchronous.Enabled = enable;
+            rbAsync.Enabled = enable;
             btnRefresh.Enabled = enable;
             lbWindows.Enabled = enable;
             btnStart.Enabled = enable;
