@@ -16,6 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+using mouse_click_simulator.window_handling;
 using System;
 using System.Windows.Forms;
 
@@ -115,16 +116,110 @@ namespace mouse_click_simulator
             return true;
         }
 
+
+        /// <summary>
+        /// Extracts the selected WindowData instance from the list of
+        /// available windows.
+        /// </summary>
+        /// <returns>Returns the corresponding WindowData in case of success.
+        /// Returns null, if an error occurred.</returns>
+        private WindowData? GetSelectedWindowData()
+        {
+            object item = lbWindows.SelectedItem;
+            if (item.GetType().FullName != typeof(WindowData).FullName)
+            {
+                return null;
+            }
+            return (WindowData)item;
+        }
+
+        private void AdjustClickCoordinatesToWindowRectangle(WinApi.RECT rectangle)
+        {
+            if (numericUpDownCoordX.Value > rectangle.right)
+            {
+                numericUpDownCoordX.Value = Math.Min(rectangle.right, numericUpDownCoordX.Maximum);
+            }
+            if (numericUpDownCoordY.Value > rectangle.bottom)
+            {
+                numericUpDownCoordY.Value = Math.Min(rectangle.bottom, numericUpDownCoordY.Maximum);
+            }
+        }
+
+        /// <summary>
+        /// Simulates a mouse click on a window.
+        /// </summary>
+        /// <param name="window">the target window to click onto.</param>
+        /// <param name="coordinates">encoded coordinates for the click</param>
+        /// <param name="button">the mouse button to click</param>
+        private static void SimulateMouseClick(WindowData window, IntPtr coordinates, MouseButtons button)
+        {
+            switch (button)
+            {
+                case MouseButtons.Left:
+                    WinApi.SendMessage(window.Handle, WinApi.WMConstants.WM_LBUTTONDOWN, IntPtr.Zero, coordinates);
+                    WinApi.SendMessage(window.Handle, WinApi.WMConstants.WM_LBUTTONUP, IntPtr.Zero, coordinates);
+                    break;
+                case MouseButtons.Right:
+                    WinApi.SendMessage(window.Handle, WinApi.WMConstants.WM_RBUTTONDOWN, IntPtr.Zero, coordinates);
+                    WinApi.SendMessage(window.Handle, WinApi.WMConstants.WM_RBUTTONUP, IntPtr.Zero, coordinates);
+                    break;
+                case MouseButtons.Middle:
+                    WinApi.SendMessage(window.Handle, WinApi.WMConstants.WM_MBUTTONDOWN, IntPtr.Zero, coordinates);
+                    WinApi.SendMessage(window.Handle, WinApi.WMConstants.WM_MBUTTONUP, IntPtr.Zero, coordinates);
+                    break;
+                case MouseButtons.XButton1:
+                case MouseButtons.XButton2:
+                case MouseButtons.None:
+                default:
+                    // No simulation capability provided.
+                    break;
+            }
+        }
+
+        private void EmitClickEvents(WindowData window)
+        {
+            int coordinates = WinApi.CoordinatesToLParam(Convert.ToInt32(numericUpDownCoordX.Value), Convert.ToInt32(numericUpDownCoordY.Value));
+            IntPtr coordParam = new(coordinates);
+
+            if (cbLeftMouseButton.Checked)
+            {
+                SimulateMouseClick(window, coordParam, MouseButtons.Left);
+            }
+            if (cbRightMouseButton.Checked)
+            {
+                SimulateMouseClick(window, coordParam, MouseButtons.Right);
+            }
+            if (cbMiddleMouseButton.Checked)
+            {
+                SimulateMouseClick(window, coordParam, MouseButtons.Middle);
+            }
+        }
+
         private void btnStartStop_Click(object sender, EventArgs e)
         {
             if (!PrerequisitesFulfilled())
                 return;
 
-            // TODO: Implement click simulation.
-            MessageBox.Show("Well, the simulation could start now, but there "
-                + "is one problem ...\r\n\r\nThis feature is not implemented yet.",
-                "Not implemented yet", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            var w = GetSelectedWindowData();
+            if (!w.HasValue)
+            {
+                MessageBox.Show("The selected item does not contain window data.",
+                   "Internal error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var window = w.Value;
+            if (!WinApi.GetClientRect(window.Handle, out WinApi.RECT rectangle))
+            {
+                MessageBox.Show("Could not get window's client area.",
+                    "Internal error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //MessageBox.Show("Client rectangle is: " + WinApi.RectToString(rectangle));
+            AdjustClickCoordinatesToWindowRectangle(rectangle);
+            
+            // TODO: Implement click simulation's interval handling.
+            EmitClickEvents(window);
         }
     }
 }

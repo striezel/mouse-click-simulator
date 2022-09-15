@@ -42,17 +42,17 @@ namespace receiver_of_clicks
                 ControlName = "rtbLogging",
                 UseDefaultRowColoringRules = true,
                 CreatedForm = false,
-                Name = "rtb"
+                Name = "rtb",
+                Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} - ${message}"
             };
             config.AddTarget(textBoxTarget);
             // --- file
-            var fileTarget = new NLog.Targets.FileTarget();
+            var fileTarget = new NLog.Targets.FileTarget()
+            {
+                FileName = GetLogFileName(),
+                Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} [${logger}] ${message}"
+            };
             config.AddTarget("file", fileTarget);
-
-            // set target properties 
-            textBoxTarget.Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} - ${message}";
-            fileTarget.FileName = GetLogFileName();
-            fileTarget.Layout = @"${date:format=yyyy-MM-dd HH\:mm\:ss} [${logger}] ${message}";
 
             // define rules
 #if DEBUG

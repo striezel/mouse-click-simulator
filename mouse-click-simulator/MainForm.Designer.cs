@@ -60,11 +60,19 @@ namespace mouse_click_simulator
             this.cbMiddleMouseButton = new System.Windows.Forms.CheckBox();
             this.cbRightMouseButton = new System.Windows.Forms.CheckBox();
             this.cbLeftMouseButton = new System.Windows.Forms.CheckBox();
+            this.gbCoordinates = new System.Windows.Forms.GroupBox();
+            this.numericUpDownCoordX = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownCoordY = new System.Windows.Forms.NumericUpDown();
+            this.lblCoordinateX = new System.Windows.Forms.Label();
+            this.lblCoordinateY = new System.Windows.Forms.Label();
             this.gbWindows.SuspendLayout();
             this.gbClicks.SuspendLayout();
             this.gbClickTiming.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterval)).BeginInit();
             this.gbMouseButtons.SuspendLayout();
+            this.gbCoordinates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoordX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoordY)).BeginInit();
             this.SuspendLayout();
             // 
             // gbWindows
@@ -109,6 +117,7 @@ namespace mouse_click_simulator
             // gbClicks
             // 
             this.gbClicks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbClicks.Controls.Add(this.gbCoordinates);
             this.gbClicks.Controls.Add(this.btnStartStop);
             this.gbClicks.Controls.Add(this.gbClickTiming);
             this.gbClicks.Controls.Add(this.gbMouseButtons);
@@ -121,7 +130,7 @@ namespace mouse_click_simulator
             // 
             // btnStartStop
             // 
-            this.btnStartStop.Location = new System.Drawing.Point(123, 197);
+            this.btnStartStop.Location = new System.Drawing.Point(125, 292);
             this.btnStartStop.Name = "btnStartStop";
             this.btnStartStop.Size = new System.Drawing.Size(75, 23);
             this.btnStartStop.TabIndex = 2;
@@ -218,6 +227,61 @@ namespace mouse_click_simulator
             this.cbLeftMouseButton.Text = "left mouse button";
             this.cbLeftMouseButton.UseVisualStyleBackColor = true;
             // 
+            // gbCoordinates
+            // 
+            this.gbCoordinates.Controls.Add(this.lblCoordinateY);
+            this.gbCoordinates.Controls.Add(this.lblCoordinateX);
+            this.gbCoordinates.Controls.Add(this.numericUpDownCoordY);
+            this.gbCoordinates.Controls.Add(this.numericUpDownCoordX);
+            this.gbCoordinates.Location = new System.Drawing.Point(6, 197);
+            this.gbCoordinates.Name = "gbCoordinates";
+            this.gbCoordinates.Size = new System.Drawing.Size(367, 89);
+            this.gbCoordinates.TabIndex = 3;
+            this.gbCoordinates.TabStop = false;
+            this.gbCoordinates.Text = "Coordinates";
+            // 
+            // numericUpDownCoordX
+            // 
+            this.numericUpDownCoordX.Location = new System.Drawing.Point(88, 22);
+            this.numericUpDownCoordX.Maximum = new decimal(new int[] {
+            1920,
+            0,
+            0,
+            0});
+            this.numericUpDownCoordX.Name = "numericUpDownCoordX";
+            this.numericUpDownCoordX.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDownCoordX.TabIndex = 0;
+            // 
+            // numericUpDownCoordY
+            // 
+            this.numericUpDownCoordY.Location = new System.Drawing.Point(88, 51);
+            this.numericUpDownCoordY.Maximum = new decimal(new int[] {
+            1080,
+            0,
+            0,
+            0});
+            this.numericUpDownCoordY.Name = "numericUpDownCoordY";
+            this.numericUpDownCoordY.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDownCoordY.TabIndex = 1;
+            // 
+            // lblCoordinateX
+            // 
+            this.lblCoordinateX.AutoSize = true;
+            this.lblCoordinateX.Location = new System.Drawing.Point(6, 24);
+            this.lblCoordinateX.Name = "lblCoordinateX";
+            this.lblCoordinateX.Size = new System.Drawing.Size(17, 15);
+            this.lblCoordinateX.TabIndex = 2;
+            this.lblCoordinateX.Text = "X:";
+            // 
+            // lblCoordinateY
+            // 
+            this.lblCoordinateY.AutoSize = true;
+            this.lblCoordinateY.Location = new System.Drawing.Point(6, 53);
+            this.lblCoordinateY.Name = "lblCoordinateY";
+            this.lblCoordinateY.Size = new System.Drawing.Size(17, 15);
+            this.lblCoordinateY.TabIndex = 3;
+            this.lblCoordinateY.Text = "Y:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,6 +298,10 @@ namespace mouse_click_simulator
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterval)).EndInit();
             this.gbMouseButtons.ResumeLayout(false);
             this.gbMouseButtons.PerformLayout();
+            this.gbCoordinates.ResumeLayout(false);
+            this.gbCoordinates.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoordX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoordY)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +320,10 @@ namespace mouse_click_simulator
         private Label lblInterval;
         private Button btnStartStop;
         private CheckBox cbMiddleMouseButton;
+        private GroupBox gbCoordinates;
+        private NumericUpDown numericUpDownCoordY;
+        private NumericUpDown numericUpDownCoordX;
+        private Label lblCoordinateY;
+        private Label lblCoordinateX;
     }
 }
