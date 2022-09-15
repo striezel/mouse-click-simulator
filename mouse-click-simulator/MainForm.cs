@@ -29,7 +29,7 @@ namespace mouse_click_simulator
             InitializeComponent();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void Refresh_Click(object sender, EventArgs e)
         {
             btnRefresh.Enabled = false;
             try
@@ -195,7 +195,21 @@ namespace mouse_click_simulator
             }
         }
 
-        private void btnStartStop_Click(object sender, EventArgs e)
+        void EnableOrDisableClickPropertyChanges(bool enable)
+        {
+            cbLeftMouseButton.Enabled = enable;
+            cbRightMouseButton.Enabled = enable;
+            cbMiddleMouseButton.Enabled = enable;
+            numericUpDownInterval.Enabled = enable;
+            numericUpDownCoordX.Enabled = enable;
+            numericUpDownCoordY.Enabled = enable;
+            btnRefresh.Enabled = enable;
+            lbWindows.Enabled = enable;
+            btnStart.Enabled = enable;
+            btnStop.Enabled = !enable;
+        }
+
+        private void Start_Click(object sender, EventArgs e)
         {
             if (!PrerequisitesFulfilled())
                 return;
@@ -215,11 +229,23 @@ namespace mouse_click_simulator
                 return;
             }
 
-            //MessageBox.Show("Client rectangle is: " + WinApi.RectToString(rectangle));
             AdjustClickCoordinatesToWindowRectangle(rectangle);
             
-            // TODO: Implement click simulation's interval handling.
-            EmitClickEvents(window);
+            timerClick.Tag = window;
+            timerClick.Interval = Convert.ToInt32(numericUpDownInterval.Value);
+            EnableOrDisableClickPropertyChanges(false);
+            timerClick.Start();
+        }
+
+        private void timerClick_Tick(object sender, EventArgs e)
+        {
+            EmitClickEvents((WindowData)timerClick.Tag);
+        }
+
+        private void Stop_Click(object sender, EventArgs e)
+        {
+            timerClick.Stop();
+            EnableOrDisableClickPropertyChanges(true);
         }
     }
 }
