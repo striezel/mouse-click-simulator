@@ -379,14 +379,14 @@ namespace mouse_click_simulator
             this.tsmiClose});
             this.tsmiProgram.Name = "tsmiProgram";
             this.tsmiProgram.Size = new System.Drawing.Size(65, 20);
-            this.tsmiProgram.Text = "Program";
+            this.tsmiProgram.Text = "&Program";
             // 
             // tsmiClose
             // 
             this.tsmiClose.Image = global::mouse_click_simulator.Properties.Resources.control_power;
             this.tsmiClose.Name = "tsmiClose";
-            this.tsmiClose.Size = new System.Drawing.Size(180, 22);
-            this.tsmiClose.Text = "Close";
+            this.tsmiClose.Size = new System.Drawing.Size(103, 22);
+            this.tsmiClose.Text = "&Close";
             this.tsmiClose.Click += new System.EventHandler(this.Close_Click);
             // 
             // tsmiInformation
@@ -395,14 +395,14 @@ namespace mouse_click_simulator
             this.tsmiVersion});
             this.tsmiInformation.Name = "tsmiInformation";
             this.tsmiInformation.Size = new System.Drawing.Size(82, 20);
-            this.tsmiInformation.Text = "Information";
+            this.tsmiInformation.Text = "&Information";
             // 
             // tsmiVersion
             // 
             this.tsmiVersion.Image = global::mouse_click_simulator.Properties.Resources.information;
             this.tsmiVersion.Name = "tsmiVersion";
-            this.tsmiVersion.Size = new System.Drawing.Size(112, 22);
-            this.tsmiVersion.Text = "Version";
+            this.tsmiVersion.Size = new System.Drawing.Size(180, 22);
+            this.tsmiVersion.Text = "&Version";
             this.tsmiVersion.Click += new System.EventHandler(this.Version_Click);
             // 
             // MainForm
@@ -416,6 +416,7 @@ namespace mouse_click_simulator
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "MainForm";
             this.Text = "Mouse click simulator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.gbWindows.ResumeLayout(false);
             this.gbClicks.ResumeLayout(false);

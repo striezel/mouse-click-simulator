@@ -323,7 +323,6 @@ namespace mouse_click_simulator
 
         private void Close_Click(object sender, EventArgs e)
         {
-            timerClick.Stop();
             Close();
         }
 
@@ -337,6 +336,11 @@ namespace mouse_click_simulator
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadIcon();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timerClick.Stop();
         }
     }
 }
