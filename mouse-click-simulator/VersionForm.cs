@@ -17,6 +17,7 @@
 */
 
 using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace mouse_click_simulator
@@ -44,6 +45,7 @@ namespace mouse_click_simulator
         {
             LoadIcon();
             LoadVersionData();
+            LoadRuntimeData();
             LoadLicenseData();
         }
 
@@ -59,6 +61,18 @@ namespace mouse_click_simulator
             {
                 lblVersionData.Text = ver.ToString();
             }
+        }
+
+
+        /// <summary>
+        /// Loads information about the .NET runtime and the OS into the
+        /// corresponding GUI elements.
+        /// </summary>
+        private void LoadRuntimeData()
+        {
+            lblDotNetData.Text = RuntimeInformation.FrameworkDescription;
+            lblOperatingSystemData.Text = RuntimeInformation.OSDescription;
+            lblArchitectureData.Text = RuntimeInformation.OSArchitecture.ToString();
         }
 
 

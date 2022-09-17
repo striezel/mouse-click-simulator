@@ -401,7 +401,7 @@ namespace mouse_click_simulator
             // 
             this.tsmiVersion.Image = global::mouse_click_simulator.Properties.Resources.information;
             this.tsmiVersion.Name = "tsmiVersion";
-            this.tsmiVersion.Size = new System.Drawing.Size(180, 22);
+            this.tsmiVersion.Size = new System.Drawing.Size(112, 22);
             this.tsmiVersion.Text = "&Version";
             this.tsmiVersion.Click += new System.EventHandler(this.Version_Click);
             // 
@@ -414,6 +414,7 @@ namespace mouse_click_simulator
             this.Controls.Add(this.gbWindows);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
+            this.MinimumSize = new System.Drawing.Size(500, 425);
             this.Name = "MainForm";
             this.Text = "Mouse click simulator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
