@@ -97,7 +97,7 @@ namespace mouse_click_simulator
             this.gbWindows.Controls.Add(this.btnRefresh);
             this.gbWindows.Location = new System.Drawing.Point(12, 36);
             this.gbWindows.Name = "gbWindows";
-            this.gbWindows.Size = new System.Drawing.Size(379, 402);
+            this.gbWindows.Size = new System.Drawing.Size(379, 463);
             this.gbWindows.TabIndex = 0;
             this.gbWindows.TabStop = false;
             this.gbWindows.Text = "Available target windows:";
@@ -114,22 +114,25 @@ namespace mouse_click_simulator
             "Click the button above to get a list of available windows."});
             this.lbWindows.Location = new System.Drawing.Point(6, 51);
             this.lbWindows.Name = "lbWindows";
-            this.lbWindows.Size = new System.Drawing.Size(367, 334);
+            this.lbWindows.Size = new System.Drawing.Size(367, 394);
             this.lbWindows.TabIndex = 1;
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Image = global::mouse_click_simulator.Properties.Resources.arrow_refresh;
             this.btnRefresh.Location = new System.Drawing.Point(6, 22);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(203, 23);
             this.btnRefresh.TabIndex = 0;
             this.btnRefresh.Text = "Refresh window list";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // gbClicks
             // 
-            this.gbClicks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbClicks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbClicks.Controls.Add(this.gbSyncAsync);
             this.gbClicks.Controls.Add(this.btnStop);
             this.gbClicks.Controls.Add(this.gbCoordinates);
@@ -138,7 +141,7 @@ namespace mouse_click_simulator
             this.gbClicks.Controls.Add(this.gbMouseButtons);
             this.gbClicks.Location = new System.Drawing.Point(409, 36);
             this.gbClicks.Name = "gbClicks";
-            this.gbClicks.Size = new System.Drawing.Size(379, 402);
+            this.gbClicks.Size = new System.Drawing.Size(379, 463);
             this.gbClicks.TabIndex = 1;
             this.gbClicks.TabStop = false;
             this.gbClicks.Text = "Click properties:";
@@ -149,7 +152,7 @@ namespace mouse_click_simulator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbSyncAsync.Controls.Add(this.rbAsync);
             this.gbSyncAsync.Controls.Add(this.rbSynchronous);
-            this.gbSyncAsync.Location = new System.Drawing.Point(6, 292);
+            this.gbSyncAsync.Location = new System.Drawing.Point(6, 322);
             this.gbSyncAsync.Name = "gbSyncAsync";
             this.gbSyncAsync.Size = new System.Drawing.Size(367, 60);
             this.gbSyncAsync.TabIndex = 5;
@@ -180,7 +183,10 @@ namespace mouse_click_simulator
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(175, 358);
+            this.btnStop.Enabled = false;
+            this.btnStop.Image = global::mouse_click_simulator.Properties.Resources.control_stop_square;
+            this.btnStop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStop.Location = new System.Drawing.Point(175, 388);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 4;
@@ -196,7 +202,7 @@ namespace mouse_click_simulator
             this.gbCoordinates.Controls.Add(this.lblCoordinateX);
             this.gbCoordinates.Controls.Add(this.numericUpDownCoordY);
             this.gbCoordinates.Controls.Add(this.numericUpDownCoordX);
-            this.gbCoordinates.Location = new System.Drawing.Point(6, 197);
+            this.gbCoordinates.Location = new System.Drawing.Point(6, 227);
             this.gbCoordinates.Name = "gbCoordinates";
             this.gbCoordinates.Size = new System.Drawing.Size(367, 89);
             this.gbCoordinates.TabIndex = 3;
@@ -247,7 +253,9 @@ namespace mouse_click_simulator
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(94, 358);
+            this.btnStart.Image = global::mouse_click_simulator.Properties.Resources.control;
+            this.btnStart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStart.Location = new System.Drawing.Point(94, 388);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 2;
@@ -261,7 +269,7 @@ namespace mouse_click_simulator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbClickTiming.Controls.Add(this.lblInterval);
             this.gbClickTiming.Controls.Add(this.numericUpDownInterval);
-            this.gbClickTiming.Location = new System.Drawing.Point(6, 131);
+            this.gbClickTiming.Location = new System.Drawing.Point(6, 161);
             this.gbClickTiming.Name = "gbClickTiming";
             this.gbClickTiming.Size = new System.Drawing.Size(367, 60);
             this.gbClickTiming.TabIndex = 1;
@@ -309,41 +317,45 @@ namespace mouse_click_simulator
             this.gbMouseButtons.Controls.Add(this.cbLeftMouseButton);
             this.gbMouseButtons.Location = new System.Drawing.Point(6, 22);
             this.gbMouseButtons.Name = "gbMouseButtons";
-            this.gbMouseButtons.Size = new System.Drawing.Size(367, 103);
+            this.gbMouseButtons.Size = new System.Drawing.Size(367, 133);
             this.gbMouseButtons.TabIndex = 0;
             this.gbMouseButtons.TabStop = false;
             this.gbMouseButtons.Text = "Mouse buttons";
             // 
             // cbMiddleMouseButton
             // 
-            this.cbMiddleMouseButton.AutoSize = true;
-            this.cbMiddleMouseButton.Location = new System.Drawing.Point(6, 47);
+            this.cbMiddleMouseButton.Image = global::mouse_click_simulator.Properties.Resources.mouse_select_wheel;
+            this.cbMiddleMouseButton.Location = new System.Drawing.Point(6, 57);
             this.cbMiddleMouseButton.Name = "cbMiddleMouseButton";
-            this.cbMiddleMouseButton.Size = new System.Drawing.Size(141, 19);
+            this.cbMiddleMouseButton.Size = new System.Drawing.Size(157, 29);
             this.cbMiddleMouseButton.TabIndex = 2;
             this.cbMiddleMouseButton.Text = "middle mouse button";
+            this.cbMiddleMouseButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cbMiddleMouseButton.UseVisualStyleBackColor = true;
             // 
             // cbRightMouseButton
             // 
-            this.cbRightMouseButton.AutoSize = true;
-            this.cbRightMouseButton.Location = new System.Drawing.Point(6, 72);
+            this.cbRightMouseButton.Image = global::mouse_click_simulator.Properties.Resources.mouse_select_right;
+            this.cbRightMouseButton.Location = new System.Drawing.Point(6, 92);
             this.cbRightMouseButton.Name = "cbRightMouseButton";
-            this.cbRightMouseButton.Size = new System.Drawing.Size(129, 19);
+            this.cbRightMouseButton.Size = new System.Drawing.Size(157, 29);
             this.cbRightMouseButton.TabIndex = 1;
             this.cbRightMouseButton.Text = "right mouse button";
+            this.cbRightMouseButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cbRightMouseButton.UseVisualStyleBackColor = true;
             // 
             // cbLeftMouseButton
             // 
-            this.cbLeftMouseButton.AutoSize = true;
             this.cbLeftMouseButton.Checked = true;
             this.cbLeftMouseButton.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbLeftMouseButton.Image = global::mouse_click_simulator.Properties.Resources.mouse_select_left;
+            this.cbLeftMouseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbLeftMouseButton.Location = new System.Drawing.Point(6, 22);
             this.cbLeftMouseButton.Name = "cbLeftMouseButton";
-            this.cbLeftMouseButton.Size = new System.Drawing.Size(121, 19);
+            this.cbLeftMouseButton.Size = new System.Drawing.Size(137, 29);
             this.cbLeftMouseButton.TabIndex = 0;
             this.cbLeftMouseButton.Text = "left mouse button";
+            this.cbLeftMouseButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cbLeftMouseButton.UseVisualStyleBackColor = true;
             // 
             // timerClick
@@ -371,8 +383,9 @@ namespace mouse_click_simulator
             // 
             // tsmiClose
             // 
+            this.tsmiClose.Image = global::mouse_click_simulator.Properties.Resources.control_power;
             this.tsmiClose.Name = "tsmiClose";
-            this.tsmiClose.Size = new System.Drawing.Size(103, 22);
+            this.tsmiClose.Size = new System.Drawing.Size(180, 22);
             this.tsmiClose.Text = "Close";
             this.tsmiClose.Click += new System.EventHandler(this.Close_Click);
             // 
@@ -386,8 +399,9 @@ namespace mouse_click_simulator
             // 
             // tsmiVersion
             // 
+            this.tsmiVersion.Image = global::mouse_click_simulator.Properties.Resources.information;
             this.tsmiVersion.Name = "tsmiVersion";
-            this.tsmiVersion.Size = new System.Drawing.Size(180, 22);
+            this.tsmiVersion.Size = new System.Drawing.Size(112, 22);
             this.tsmiVersion.Text = "Version";
             this.tsmiVersion.Click += new System.EventHandler(this.Version_Click);
             // 
@@ -395,13 +409,14 @@ namespace mouse_click_simulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 511);
             this.Controls.Add(this.gbClicks);
             this.Controls.Add(this.gbWindows);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "MainForm";
             this.Text = "Mouse click simulator";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.gbWindows.ResumeLayout(false);
             this.gbClicks.ResumeLayout(false);
             this.gbSyncAsync.ResumeLayout(false);
@@ -414,7 +429,6 @@ namespace mouse_click_simulator
             this.gbClickTiming.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterval)).EndInit();
             this.gbMouseButtons.ResumeLayout(false);
-            this.gbMouseButtons.PerformLayout();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);

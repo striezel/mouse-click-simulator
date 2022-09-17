@@ -29,6 +29,14 @@ namespace mouse_click_simulator
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Sets the icon of the form.
+        /// </summary>
+        private void LoadIcon()
+        {
+            Icon = System.Drawing.Icon.FromHandle(Properties.Resources.mouse.GetHicon());
+        }
+
         private void Refresh_Click(object sender, EventArgs e)
         {
             btnRefresh.Enabled = false;
@@ -248,7 +256,7 @@ namespace mouse_click_simulator
             }                
         }
 
-        void EnableOrDisableClickPropertyChanges(bool enable)
+        private void EnableOrDisableClickPropertyChanges(bool enable)
         {
             cbLeftMouseButton.Enabled = enable;
             cbRightMouseButton.Enabled = enable;
@@ -262,6 +270,16 @@ namespace mouse_click_simulator
             lbWindows.Enabled = enable;
             btnStart.Enabled = enable;
             btnStop.Enabled = !enable;
+        }
+
+        private void EnableClickPropertyChanges()
+        {
+            EnableOrDisableClickPropertyChanges(true);
+        }
+
+        private void DisableClickPropertyChanges()
+        {
+            EnableOrDisableClickPropertyChanges(false);
         }
 
         private void Start_Click(object sender, EventArgs e)
@@ -288,7 +306,7 @@ namespace mouse_click_simulator
             
             timerClick.Tag = window;
             timerClick.Interval = Convert.ToInt32(numericUpDownInterval.Value);
-            EnableOrDisableClickPropertyChanges(false);
+            DisableClickPropertyChanges();
             timerClick.Start();
         }
 
@@ -300,7 +318,7 @@ namespace mouse_click_simulator
         private void Stop_Click(object sender, EventArgs e)
         {
             timerClick.Stop();
-            EnableOrDisableClickPropertyChanges(true);
+            EnableClickPropertyChanges();
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -311,11 +329,14 @@ namespace mouse_click_simulator
 
         private void Version_Click(object sender, EventArgs e)
         {
-            var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            var ver = asm.GetName().Version;
-            MessageBox.Show("Mouse Click Simulator, version " + ver.ToString(),
-                "Version information", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            var form = new VersionForm();
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            LoadIcon();
         }
     }
 }
