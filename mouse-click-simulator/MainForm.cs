@@ -292,7 +292,7 @@ namespace mouse_click_simulator
             timerClick.Start();
         }
 
-        private void timerClick_Tick(object sender, EventArgs e)
+        private void TimerClick_Tick(object sender, EventArgs e)
         {
             EmitClickEvents((WindowData)timerClick.Tag);
         }
@@ -301,6 +301,21 @@ namespace mouse_click_simulator
         {
             timerClick.Stop();
             EnableOrDisableClickPropertyChanges(true);
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            timerClick.Stop();
+            Close();
+        }
+
+        private void Version_Click(object sender, EventArgs e)
+        {
+            var asm = System.Reflection.Assembly.GetExecutingAssembly();
+            var ver = asm.GetName().Version;
+            MessageBox.Show("Mouse Click Simulator, version " + ver.ToString(),
+                "Version information", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }

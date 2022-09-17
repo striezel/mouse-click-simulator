@@ -71,6 +71,11 @@ namespace mouse_click_simulator
             this.cbRightMouseButton = new System.Windows.Forms.CheckBox();
             this.cbLeftMouseButton = new System.Windows.Forms.CheckBox();
             this.timerClick = new System.Windows.Forms.Timer(this.components);
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
+            this.tsmiProgram = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInformation = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiVersion = new System.Windows.Forms.ToolStripMenuItem();
             this.gbWindows.SuspendLayout();
             this.gbClicks.SuspendLayout();
             this.gbSyncAsync.SuspendLayout();
@@ -80,6 +85,7 @@ namespace mouse_click_simulator
             this.gbClickTiming.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterval)).BeginInit();
             this.gbMouseButtons.SuspendLayout();
+            this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbWindows
@@ -89,9 +95,9 @@ namespace mouse_click_simulator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbWindows.Controls.Add(this.lbWindows);
             this.gbWindows.Controls.Add(this.btnRefresh);
-            this.gbWindows.Location = new System.Drawing.Point(12, 12);
+            this.gbWindows.Location = new System.Drawing.Point(12, 36);
             this.gbWindows.Name = "gbWindows";
-            this.gbWindows.Size = new System.Drawing.Size(379, 426);
+            this.gbWindows.Size = new System.Drawing.Size(379, 402);
             this.gbWindows.TabIndex = 0;
             this.gbWindows.TabStop = false;
             this.gbWindows.Text = "Available target windows:";
@@ -108,7 +114,7 @@ namespace mouse_click_simulator
             "Click the button above to get a list of available windows."});
             this.lbWindows.Location = new System.Drawing.Point(6, 51);
             this.lbWindows.Name = "lbWindows";
-            this.lbWindows.Size = new System.Drawing.Size(367, 364);
+            this.lbWindows.Size = new System.Drawing.Size(367, 334);
             this.lbWindows.TabIndex = 1;
             // 
             // btnRefresh
@@ -130,9 +136,9 @@ namespace mouse_click_simulator
             this.gbClicks.Controls.Add(this.btnStart);
             this.gbClicks.Controls.Add(this.gbClickTiming);
             this.gbClicks.Controls.Add(this.gbMouseButtons);
-            this.gbClicks.Location = new System.Drawing.Point(409, 12);
+            this.gbClicks.Location = new System.Drawing.Point(409, 36);
             this.gbClicks.Name = "gbClicks";
-            this.gbClicks.Size = new System.Drawing.Size(379, 426);
+            this.gbClicks.Size = new System.Drawing.Size(379, 402);
             this.gbClicks.TabIndex = 1;
             this.gbClicks.TabStop = false;
             this.gbClicks.Text = "Click properties:";
@@ -342,7 +348,48 @@ namespace mouse_click_simulator
             // 
             // timerClick
             // 
-            this.timerClick.Tick += new System.EventHandler(this.timerClick_Tick);
+            this.timerClick.Tick += new System.EventHandler(this.TimerClick_Tick);
+            // 
+            // menuStripMain
+            // 
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiProgram,
+            this.tsmiInformation});
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Size = new System.Drawing.Size(800, 24);
+            this.menuStripMain.TabIndex = 2;
+            this.menuStripMain.Text = "menuStrip1";
+            // 
+            // tsmiProgram
+            // 
+            this.tsmiProgram.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiClose});
+            this.tsmiProgram.Name = "tsmiProgram";
+            this.tsmiProgram.Size = new System.Drawing.Size(65, 20);
+            this.tsmiProgram.Text = "Program";
+            // 
+            // tsmiClose
+            // 
+            this.tsmiClose.Name = "tsmiClose";
+            this.tsmiClose.Size = new System.Drawing.Size(103, 22);
+            this.tsmiClose.Text = "Close";
+            this.tsmiClose.Click += new System.EventHandler(this.Close_Click);
+            // 
+            // tsmiInformation
+            // 
+            this.tsmiInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiVersion});
+            this.tsmiInformation.Name = "tsmiInformation";
+            this.tsmiInformation.Size = new System.Drawing.Size(82, 20);
+            this.tsmiInformation.Text = "Information";
+            // 
+            // tsmiVersion
+            // 
+            this.tsmiVersion.Name = "tsmiVersion";
+            this.tsmiVersion.Size = new System.Drawing.Size(180, 22);
+            this.tsmiVersion.Text = "Version";
+            this.tsmiVersion.Click += new System.EventHandler(this.Version_Click);
             // 
             // MainForm
             // 
@@ -351,6 +398,8 @@ namespace mouse_click_simulator
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gbClicks);
             this.Controls.Add(this.gbWindows);
+            this.Controls.Add(this.menuStripMain);
+            this.MainMenuStrip = this.menuStripMain;
             this.Name = "MainForm";
             this.Text = "Mouse click simulator";
             this.gbWindows.ResumeLayout(false);
@@ -366,7 +415,10 @@ namespace mouse_click_simulator
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterval)).EndInit();
             this.gbMouseButtons.ResumeLayout(false);
             this.gbMouseButtons.PerformLayout();
+            this.menuStripMain.ResumeLayout(false);
+            this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -394,5 +446,10 @@ namespace mouse_click_simulator
         private GroupBox gbSyncAsync;
         private RadioButton rbAsync;
         private RadioButton rbSynchronous;
+        private MenuStrip menuStripMain;
+        private ToolStripMenuItem tsmiProgram;
+        private ToolStripMenuItem tsmiClose;
+        private ToolStripMenuItem tsmiInformation;
+        private ToolStripMenuItem tsmiVersion;
     }
 }
