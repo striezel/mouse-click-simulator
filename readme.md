@@ -1,14 +1,17 @@
-# Mouse click simulator
+# Mouse Click Simulator
 
-Mouse click simulator  _(working title, final name may change)_ will be a
-Windows Forms application that can be used to simulate mouse clicks on any
-desktop window easily.
+Mouse Click Simulator is a Windows Forms application that can be used to
+simulate mouse clicks on any desktop window easily.
 
 ## Prerequisites
 
 To run the program you need the .NET 6 runtime.
 The current .NET 6 runtime can be downloaded from
 <https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime>.
+
+## Version history
+
+A changelog is available in [changelog.md](./changelog.md).
 
 ## Copyright and Licensing
 
