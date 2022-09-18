@@ -35,4 +35,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="git show -s --format=%25%25ci &gt; &quot;$(ProjectDir)/git-info/date.txt&quot;&#xD;&#xA;git describe --always &gt; &quot;$(ProjectDir)/git-info/description.txt&quot;&#xD;&#xA;git rev-parse HEAD &gt; &quot;$(ProjectDir)/git-info/hash.txt&quot;" />
+  </Target>
+
 </Project>

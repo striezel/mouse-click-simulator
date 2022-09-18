@@ -30,6 +30,13 @@
         {
             this.tabControlInfo = new System.Windows.Forms.TabControl();
             this.tabPageVersion = new System.Windows.Forms.TabPage();
+            this.gbGit = new System.Windows.Forms.GroupBox();
+            this.lblDescriptionData = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblDateData = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblCommitData = new System.Windows.Forms.Label();
+            this.lblCommit = new System.Windows.Forms.Label();
             this.gbProgram = new System.Windows.Forms.GroupBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
@@ -46,6 +53,7 @@
             this.lblThirdPartyIntro = new System.Windows.Forms.Label();
             this.tabControlInfo.SuspendLayout();
             this.tabPageVersion.SuspendLayout();
+            this.gbGit.SuspendLayout();
             this.gbProgram.SuspendLayout();
             this.gbRuntimeInformation.SuspendLayout();
             this.tabPageThirdParty.SuspendLayout();
@@ -66,6 +74,7 @@
             // 
             // tabPageVersion
             // 
+            this.tabPageVersion.Controls.Add(this.gbGit);
             this.tabPageVersion.Controls.Add(this.gbProgram);
             this.tabPageVersion.Controls.Add(this.gbRuntimeInformation);
             this.tabPageVersion.Location = new System.Drawing.Point(4, 24);
@@ -75,6 +84,77 @@
             this.tabPageVersion.TabIndex = 0;
             this.tabPageVersion.Text = "Version";
             this.tabPageVersion.UseVisualStyleBackColor = true;
+            // 
+            // gbGit
+            // 
+            this.gbGit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbGit.Controls.Add(this.lblDescriptionData);
+            this.gbGit.Controls.Add(this.lblDescription);
+            this.gbGit.Controls.Add(this.lblDateData);
+            this.gbGit.Controls.Add(this.lblDate);
+            this.gbGit.Controls.Add(this.lblCommitData);
+            this.gbGit.Controls.Add(this.lblCommit);
+            this.gbGit.Location = new System.Drawing.Point(6, 99);
+            this.gbGit.Name = "gbGit";
+            this.gbGit.Size = new System.Drawing.Size(756, 112);
+            this.gbGit.TabIndex = 11;
+            this.gbGit.TabStop = false;
+            this.gbGit.Text = "Git information:";
+            // 
+            // lblDescriptionData
+            // 
+            this.lblDescriptionData.AutoSize = true;
+            this.lblDescriptionData.Location = new System.Drawing.Point(101, 79);
+            this.lblDescriptionData.Name = "lblDescriptionData";
+            this.lblDescriptionData.Size = new System.Drawing.Size(57, 15);
+            this.lblDescriptionData.TabIndex = 5;
+            this.lblDescriptionData.Text = "unknown";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(6, 79);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(70, 15);
+            this.lblDescription.TabIndex = 4;
+            this.lblDescription.Text = "Description:";
+            // 
+            // lblDateData
+            // 
+            this.lblDateData.AutoSize = true;
+            this.lblDateData.Location = new System.Drawing.Point(101, 49);
+            this.lblDateData.Name = "lblDateData";
+            this.lblDateData.Size = new System.Drawing.Size(57, 15);
+            this.lblDateData.TabIndex = 3;
+            this.lblDateData.Text = "unknown";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(6, 49);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(34, 15);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "Date:";
+            // 
+            // lblCommitData
+            // 
+            this.lblCommitData.AutoSize = true;
+            this.lblCommitData.Location = new System.Drawing.Point(101, 19);
+            this.lblCommitData.Name = "lblCommitData";
+            this.lblCommitData.Size = new System.Drawing.Size(57, 15);
+            this.lblCommitData.TabIndex = 1;
+            this.lblCommitData.Text = "unknown";
+            // 
+            // lblCommit
+            // 
+            this.lblCommit.AutoSize = true;
+            this.lblCommit.Location = new System.Drawing.Point(6, 19);
+            this.lblCommit.Name = "lblCommit";
+            this.lblCommit.Size = new System.Drawing.Size(54, 15);
+            this.lblCommit.TabIndex = 0;
+            this.lblCommit.Text = "Commit:";
             // 
             // gbProgram
             // 
@@ -127,7 +207,7 @@
             this.gbRuntimeInformation.Controls.Add(this.lblOperatingSystemData);
             this.gbRuntimeInformation.Controls.Add(this.lblOperatingSystem);
             this.gbRuntimeInformation.Controls.Add(this.lblArchitecture);
-            this.gbRuntimeInformation.Location = new System.Drawing.Point(6, 99);
+            this.gbRuntimeInformation.Location = new System.Drawing.Point(6, 217);
             this.gbRuntimeInformation.Name = "gbRuntimeInformation";
             this.gbRuntimeInformation.Size = new System.Drawing.Size(756, 108);
             this.gbRuntimeInformation.TabIndex = 9;
@@ -233,6 +313,8 @@
             this.Load += new System.EventHandler(this.VersionForm_Load);
             this.tabControlInfo.ResumeLayout(false);
             this.tabPageVersion.ResumeLayout(false);
+            this.gbGit.ResumeLayout(false);
+            this.gbGit.PerformLayout();
             this.gbProgram.ResumeLayout(false);
             this.gbProgram.PerformLayout();
             this.gbRuntimeInformation.ResumeLayout(false);
@@ -261,5 +343,12 @@
         private System.Windows.Forms.Label lblArchitectureData;
         private System.Windows.Forms.GroupBox gbProgram;
         private System.Windows.Forms.GroupBox gbRuntimeInformation;
+        private System.Windows.Forms.GroupBox gbGit;
+        private System.Windows.Forms.Label lblDescriptionData;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblDateData;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblCommitData;
+        private System.Windows.Forms.Label lblCommit;
     }
 }

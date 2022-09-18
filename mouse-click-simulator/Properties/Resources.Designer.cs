@@ -71,16 +71,6 @@ namespace mouse_click_simulator.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow_refresh {
-            get {
-                object obj = ResourceManager.GetObject("arrow_refresh", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Creative Commons Legal Code
         ///
         ///Attribution 3.0 Unported
@@ -144,6 +134,36 @@ namespace mouse_click_simulator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2022-09-18 17:58:53 +0200
+        /// ähnelt.
+        /// </summary>
+        internal static string git_date {
+            get {
+                return ResourceManager.GetString("git_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die v0.2.0-4-g60eaff4
+        /// ähnelt.
+        /// </summary>
+        internal static string git_description {
+            get {
+                return ResourceManager.GetString("git_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 60eaff4d26a27553551eff27b719b81592f7aac3
+        /// ähnelt.
+        /// </summary>
+        internal static string git_hash {
+            get {
+                return ResourceManager.GetString("git_hash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap information {
@@ -200,21 +220,6 @@ namespace mouse_click_simulator.Properties {
             get {
                 object obj = ResourceManager.GetObject("mouse_select_wheel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Silk icon set 1.3
-        ///
-        ///_________________________________________
-        ///Mark James
-        ///http://www.famfamfam.com/lab/icons/silk/
-        ///_________________________________________
-        /// ähnelt.
-        /// </summary>
-        internal static string silk_intro {
-            get {
-                return ResourceManager.GetString("silk_intro", resourceCulture);
             }
         }
     }

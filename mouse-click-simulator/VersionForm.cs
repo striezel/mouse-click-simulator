@@ -45,6 +45,7 @@ namespace mouse_click_simulator
         {
             LoadIcon();
             LoadVersionData();
+            LoadGitData();
             LoadRuntimeData();
             LoadLicenseData();
         }
@@ -61,6 +62,18 @@ namespace mouse_click_simulator
             {
                 lblVersionData.Text = ver.ToString();
             }
+        }
+
+
+        /// <summary>
+        /// Loads information about the Git version control system into the
+        /// corresponding GUI elements.
+        /// </summary>
+        private void LoadGitData()
+        {
+            lblCommitData.Text = GitInfo.Commit();
+            lblDateData.Text = GitInfo.CommitDate();
+            lblDescriptionData.Text = GitInfo.Description();
         }
 
 

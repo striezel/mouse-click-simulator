@@ -6,7 +6,9 @@ improvements may be omitted.)_
 
 ## Version 0.?.? (2022-09-??)
 
-* The version information window will now show some information about the .NET
+* The version information window does now show the revision from the Git version
+  control system that was used to build the application, too.
+* The version information window does now show some information about the .NET
   runtime, too.
 * Some icons used in the application are replaced. More specifically, all icons
   from the Silk icon set are replaced with similar icons from the Fugue icon
