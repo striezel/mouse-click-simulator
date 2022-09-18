@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="icons\fugue\" />
-    <Folder Include="icons\silk\" />
   </ItemGroup>
 
   <ItemGroup>

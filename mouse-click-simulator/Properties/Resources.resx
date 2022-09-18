@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="arrow_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\silk\arrow_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-circle-double" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\fugue\arrow-circle-double.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cc_by_3_0_legalcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\silk\cc-by-3.0-legalcode.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\icons\fugue\cc-by-3.0-legalcode.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="control" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\fugue\control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -137,7 +137,7 @@
     <value>..\icons\fugue\fugue_intro.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\silk\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\icons\fugue\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\fugue\mouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,8 +153,5 @@
   </data>
   <data name="mouse_select_wheel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\fugue\mouse-select-wheel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="silk_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\silk\silk_intro.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

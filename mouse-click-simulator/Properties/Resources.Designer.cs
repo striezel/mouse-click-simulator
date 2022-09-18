@@ -63,6 +63,16 @@ namespace mouse_click_simulator.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle_double {
+            get {
+                object obj = ResourceManager.GetObject("arrow-circle-double", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_refresh {
             get {
                 object obj = ResourceManager.GetObject("arrow_refresh", resourceCulture);

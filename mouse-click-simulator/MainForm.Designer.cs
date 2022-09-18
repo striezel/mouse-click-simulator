@@ -119,7 +119,7 @@ namespace mouse_click_simulator
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Image = global::mouse_click_simulator.Properties.Resources.arrow_refresh;
+            this.btnRefresh.Image = global::mouse_click_simulator.Properties.Resources.arrow_circle_double;
             this.btnRefresh.Location = new System.Drawing.Point(6, 22);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(203, 23);
@@ -401,7 +401,7 @@ namespace mouse_click_simulator
             // 
             this.tsmiVersion.Image = global::mouse_click_simulator.Properties.Resources.information;
             this.tsmiVersion.Name = "tsmiVersion";
-            this.tsmiVersion.Size = new System.Drawing.Size(112, 22);
+            this.tsmiVersion.Size = new System.Drawing.Size(180, 22);
             this.tsmiVersion.Text = "&Version";
             this.tsmiVersion.Click += new System.EventHandler(this.Version_Click);
             // 

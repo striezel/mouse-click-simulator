@@ -83,12 +83,7 @@ namespace mouse_click_simulator
         private void LoadLicenseData()
         {
             var cc_by_3_0 = Properties.Resources.cc_by_3_0_legalcode;
-            string separator = Environment.NewLine
-                + "========================================"
-                + Environment.NewLine;
-            rtbLicenses.Text = Properties.Resources.fugue_intro + cc_by_3_0
-                + separator + Environment.NewLine
-                + Properties.Resources.silk_intro + cc_by_3_0;
+            rtbLicenses.Text = Properties.Resources.fugue_intro + cc_by_3_0;
         }
     }
 }

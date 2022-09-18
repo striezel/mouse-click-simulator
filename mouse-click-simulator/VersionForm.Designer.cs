@@ -227,7 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlInfo);
-            this.MinimumSize = new System.Drawing.Size(440, 280);
+            this.MinimumSize = new System.Drawing.Size(480, 280);
             this.Name = "VersionForm";
             this.Text = "Version information";
             this.Load += new System.EventHandler(this.VersionForm_Load);

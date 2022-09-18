@@ -8,6 +8,9 @@ improvements may be omitted.)_
 
 * The version information window will now show some information about the .NET
   runtime, too.
+* Some icons used in the application are replaced. More specifically, all icons
+  from the Silk icon set are replaced with similar icons from the Fugue icon
+  set. This way only one icon set is required to cover all needs.
 * A proper icon is added to the setup and to the main windows of the
   application.
 
