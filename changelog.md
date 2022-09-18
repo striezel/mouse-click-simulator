@@ -4,7 +4,7 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
-## Version 0.?.? (2022-09-??)
+## Version 0.2.1 (2022-09-18)
 
 * The version information window does now show the revision from the Git version
   control system that was used to build the application, too.
