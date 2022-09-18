@@ -413,12 +413,12 @@ namespace mouse_click_simulator
             this.Controls.Add(this.gbClicks);
             this.Controls.Add(this.gbWindows);
             this.Controls.Add(this.menuStripMain);
+            this.Icon = global::mouse_click_simulator.Properties.Resources.mouse_icon;
             this.MainMenuStrip = this.menuStripMain;
             this.MinimumSize = new System.Drawing.Size(500, 425);
             this.Name = "MainForm";
             this.Text = "Mouse click simulator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.gbWindows.ResumeLayout(false);
             this.gbClicks.ResumeLayout(false);
             this.gbSyncAsync.ResumeLayout(false);

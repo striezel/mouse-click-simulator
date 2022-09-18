@@ -6,8 +6,10 @@ improvements may be omitted.)_
 
 ## Version 0.?.? (2022-09-??)
 
-The version information window will now show some information about the .NET
-runtime, too.
+* The version information window will now show some information about the .NET
+  runtime, too.
+* A proper icon is added to the setup and to the main windows of the
+  application.
 
 ## Version 0.2.0 (2022-09-17)
 

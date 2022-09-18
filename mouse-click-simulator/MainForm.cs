@@ -29,14 +29,6 @@ namespace mouse_click_simulator
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Sets the icon of the form.
-        /// </summary>
-        private void LoadIcon()
-        {
-            Icon = System.Drawing.Icon.FromHandle(Properties.Resources.mouse.GetHicon());
-        }
-
         private void Refresh_Click(object sender, EventArgs e)
         {
             btnRefresh.Enabled = false;
@@ -331,11 +323,6 @@ namespace mouse_click_simulator
             var form = new VersionForm();
             form.ShowDialog();
             form.Dispose();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            LoadIcon();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

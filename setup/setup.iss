@@ -20,7 +20,7 @@ OutputBaseFilename=mouse-click-simulator_setup
 Compression=lzma
 SolidCompression=yes
 ; icon for installer
-; SetupIconFile=todo.ico
+SetupIconFile=..\mouse-click-simulator\icons\fugue\mouse.ico
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
@@ -61,6 +61,6 @@ Source: "..\LICENSE"; DestDir: "{app}"; Flags: ignoreversion
 ; Start Menu entry for updater: check for new updates
 Name: "{group}\Mouse Click Simulator"; Filename: "{app}\mouse-click-simulator.exe"
 ; Start Menu entry for Uninstaller
-Name: "{group}\Uninstall Mouse Click Simulator"; Filename: "{app}\unins000.exe"
+Name: "{group}\Uninstall Mouse Click Simulator"; Filename: "{app}\unins000.exe"; IconFilename: "{app}\mouse-click-simulator.exe" 
 ;; Desktopicon (if selected during install - default is unselected)
 ;Name: "{commondesktop}\Mouse Click Simulator"; Filename: "{app}\mouse-click-simulator.exe"; Parameters: "check"; Tasks: desktopicon

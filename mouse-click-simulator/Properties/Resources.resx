@@ -142,6 +142,9 @@
   <data name="mouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\fugue\mouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mouse_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\fugue\mouse.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mouse_select_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\fugue\mouse-select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
