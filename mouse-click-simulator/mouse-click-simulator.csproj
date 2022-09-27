@@ -14,6 +14,7 @@
     <AssemblyVersion>0.2.1.0</AssemblyVersion>
     <FileVersion>0.2.1.0</FileVersion>
     <PackageProjectUrl>https://github.com/striezel/mouse-click-simulator</PackageProjectUrl>
+    <StartupObject>mouse_click_simulator.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
