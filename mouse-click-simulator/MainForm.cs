@@ -31,6 +31,15 @@ namespace mouse_click_simulator
 
         private void Refresh_Click(object sender, EventArgs e)
         {
+            RefreshWindowList();
+        }
+
+
+        /// <summary>
+        /// Refreshes the list of available target windows.
+        /// </summary>
+        private void RefreshWindowList()
+        {
             btnRefresh.Enabled = false;
             try
             {
@@ -145,6 +154,7 @@ namespace mouse_click_simulator
             }
         }
 
+
         /// <summary>
         /// Simulates a mouse click on a window.
         /// </summary>
@@ -176,6 +186,7 @@ namespace mouse_click_simulator
             }
         }
 
+
         private static void SimulateMouseClickAsync(WindowData window, IntPtr coordinates, MouseButtons button)
         {
             switch (button)
@@ -201,6 +212,7 @@ namespace mouse_click_simulator
             }
         }
 
+
         private void EmitClickEventsAsync(WindowData window, IntPtr coordinates)
         {
             if (cbLeftMouseButton.Checked)
@@ -216,6 +228,7 @@ namespace mouse_click_simulator
                 SimulateMouseClickAsync(window, coordinates, MouseButtons.Middle);
             }
         }
+
 
         private void EmitClickEventsSync(WindowData window, IntPtr coordinates)
         {
@@ -233,6 +246,7 @@ namespace mouse_click_simulator
             }
         }
 
+
         private void EmitClickEvents(WindowData window)
         {
             int coordinates = WinApi.CoordinatesToLParam(Convert.ToInt32(numericUpDownCoordX.Value), Convert.ToInt32(numericUpDownCoordY.Value));
@@ -247,6 +261,7 @@ namespace mouse_click_simulator
                 EmitClickEventsSync(window, coordParam);
             }                
         }
+
 
         private void EnableOrDisableClickPropertyChanges(bool enable)
         {
@@ -264,15 +279,18 @@ namespace mouse_click_simulator
             btnStop.Enabled = !enable;
         }
 
+
         private void EnableClickPropertyChanges()
         {
             EnableOrDisableClickPropertyChanges(true);
         }
 
+
         private void DisableClickPropertyChanges()
         {
             EnableOrDisableClickPropertyChanges(false);
         }
+
 
         private void Start_Click(object sender, EventArgs e)
         {
@@ -318,6 +336,7 @@ namespace mouse_click_simulator
             Close();
         }
 
+
         private void Version_Click(object sender, EventArgs e)
         {
             var form = new VersionForm();
@@ -325,9 +344,16 @@ namespace mouse_click_simulator
             form.Dispose();
         }
 
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             timerClick.Stop();
+        }
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            RefreshWindowList();
         }
     }
 }

@@ -4,6 +4,12 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
+## Version 0.?.? (2022-10-??)
+
+* The list of available target windows is loaded during startup. That way the
+  users do not have to explicitly refresh the list, if the target window is
+  already there when the program starts.
+
 ## Version 0.2.1 (2022-09-18)
 
 * The version information window does now show the revision from the Git version
