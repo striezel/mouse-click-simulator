@@ -11,6 +11,16 @@ To run the program you need the .NET 6 runtime.
 The current .NET 6 runtime can be downloaded from
 <https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime>.
 
+Furthermore, the program only runs on Windows operating systems, because it uses
+the Windows Application Programming Interface ("WinAPI") internally to send the
+clicks to other application windows.
+
+## Installation
+
+To install the program, take a look at the
+[available releases](https://github.com/striezel/mouse-click-simulator/releases)
+and download the installer of the newest version from there.
+
 ## Version history
 
 A changelog is available in [changelog.md](./changelog.md).
