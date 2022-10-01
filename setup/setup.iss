@@ -6,7 +6,7 @@
 
 AppId={{15F5DF60-44EA-4311-A42A-964865853D90}}
 AppName=Mouse Click Simulator
-AppVersion=0.2.1.0
+AppVersion=0.2.2.0
 AppPublisher=Dirk Stolle
 AppPublisherURL=https://github.com/striezel/mouse-click-simulator
 AppSupportURL=https://github.com/striezel/mouse-click-simulator
