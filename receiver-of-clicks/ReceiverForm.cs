@@ -52,7 +52,7 @@ namespace receiver_of_clicks
 
         private void ReceiverForm_Shown(object sender, EventArgs e)
         {
-            // Logging can only be intialized after the form has been created,
+            // Logging can only be initialized after the form has been created,
             // so static initialization is not enough.
             Logging.Initialize();
         }
