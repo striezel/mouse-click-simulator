@@ -102,7 +102,7 @@ namespace mouse_click_simulator.window_handling
         /// WM_MBUTTONDOWN, and WM_MBUTTONUP. Those flags can be passed in the
         /// wParam parameter of SendMessage().
         /// </summary>
-        internal enum MouseEventWParam: int
+        internal enum MouseEventWParam : int
         {
             /// <summary>
             /// The left mouse button is down.
@@ -122,7 +122,7 @@ namespace mouse_click_simulator.window_handling
             /// <summary>
             /// The CTRL key is down.
             /// </summary>
-            MK_CONTROL =0x0008,
+            MK_CONTROL = 0x0008,
 
             /// <summary>
             /// The middle mouse button is down.
@@ -135,7 +135,7 @@ namespace mouse_click_simulator.window_handling
             MK_XBUTTON1 = 0x0020,
 
             /// <summary>
-            /// The seconds X button is down.
+            /// The second X button is down.
             /// </summary>
             MK_XBUTTON2 = 0x0040
         }

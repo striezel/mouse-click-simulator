@@ -259,7 +259,7 @@ namespace mouse_click_simulator
             else
             {
                 EmitClickEventsSync(window, coordParam);
-            }                
+            }
         }
 
 
@@ -313,7 +313,7 @@ namespace mouse_click_simulator
             }
 
             AdjustClickCoordinatesToWindowRectangle(rectangle);
-            
+
             timerClick.Tag = window;
             timerClick.Interval = Convert.ToInt32(numericUpDownInterval.Value);
             DisableClickPropertyChanges();
