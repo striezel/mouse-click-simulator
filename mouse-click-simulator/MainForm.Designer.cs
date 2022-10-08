@@ -74,6 +74,11 @@ namespace mouse_click_simulator
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.tsmiProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoadPresetAtStartup = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSaveCurrentSettingsAsPreset = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoadPresetNow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVersion = new System.Windows.Forms.ToolStripMenuItem();
             this.gbWindows.SuspendLayout();
@@ -366,6 +371,7 @@ namespace mouse_click_simulator
             // 
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiProgram,
+            this.tsmiSettings,
             this.tsmiInformation});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
@@ -388,6 +394,42 @@ namespace mouse_click_simulator
             this.tsmiClose.Size = new System.Drawing.Size(103, 22);
             this.tsmiClose.Text = "&Close";
             this.tsmiClose.Click += new System.EventHandler(this.Close_Click);
+            // 
+            // tsmiSettings
+            // 
+            this.tsmiSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiLoadPresetAtStartup,
+            this.toolStripSeparator1,
+            this.tsmiSaveCurrentSettingsAsPreset,
+            this.tsmiLoadPresetNow});
+            this.tsmiSettings.Name = "tsmiSettings";
+            this.tsmiSettings.Size = new System.Drawing.Size(61, 20);
+            this.tsmiSettings.Text = "Settings";
+            // 
+            // tsmiLoadPresetAtStartup
+            // 
+            this.tsmiLoadPresetAtStartup.Name = "tsmiLoadPresetAtStartup";
+            this.tsmiLoadPresetAtStartup.Size = new System.Drawing.Size(232, 22);
+            this.tsmiLoadPresetAtStartup.Text = "Load preset at startup";
+            this.tsmiLoadPresetAtStartup.Click += new System.EventHandler(this.LoadPresetAtStartup_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(229, 6);
+            // 
+            // tsmiSaveCurrentSettingsAsPreset
+            // 
+            this.tsmiSaveCurrentSettingsAsPreset.Name = "tsmiSaveCurrentSettingsAsPreset";
+            this.tsmiSaveCurrentSettingsAsPreset.Size = new System.Drawing.Size(232, 22);
+            this.tsmiSaveCurrentSettingsAsPreset.Text = "Save current settings as preset";
+            this.tsmiSaveCurrentSettingsAsPreset.Click += new System.EventHandler(this.SaveCurrentSettingsAsPreset_Click);
+            // 
+            // tsmiLoadPresetNow
+            // 
+            this.tsmiLoadPresetNow.Name = "tsmiLoadPresetNow";
+            this.tsmiLoadPresetNow.Size = new System.Drawing.Size(232, 22);
+            this.tsmiLoadPresetNow.Text = "Load preset now";
             // 
             // tsmiInformation
             // 
@@ -468,5 +510,10 @@ namespace mouse_click_simulator
         private ToolStripMenuItem tsmiClose;
         private ToolStripMenuItem tsmiInformation;
         private ToolStripMenuItem tsmiVersion;
+        private ToolStripMenuItem tsmiSettings;
+        private ToolStripMenuItem tsmiLoadPresetAtStartup;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem tsmiSaveCurrentSettingsAsPreset;
+        private ToolStripMenuItem tsmiLoadPresetNow;
     }
 }

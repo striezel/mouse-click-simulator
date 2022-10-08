@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mouse-click-simulator", "mouse-click-simulator\mouse-click-simulator.csproj", "{85F0E700-7F5F-49A8-BD63-DAE6AF35EE6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "receiver-of-clicks", "receiver-of-clicks\receiver-of-clicks.csproj", "{2A859C62-4DE5-45D8-9197-0A9800C26A3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "receiver-of-clicks", "receiver-of-clicks\receiver-of-clicks.csproj", "{2A859C62-4DE5-45D8-9197-0A9800C26A3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mouse-click-simulator-tests", "mouse-click-simulator-tests\mouse-click-simulator-tests.csproj", "{AC77B2DE-8BA2-4DF6-9B60-2F8AB9FD6E3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2A859C62-4DE5-45D8-9197-0A9800C26A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A859C62-4DE5-45D8-9197-0A9800C26A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A859C62-4DE5-45D8-9197-0A9800C26A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC77B2DE-8BA2-4DF6-9B60-2F8AB9FD6E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC77B2DE-8BA2-4DF6-9B60-2F8AB9FD6E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC77B2DE-8BA2-4DF6-9B60-2F8AB9FD6E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC77B2DE-8BA2-4DF6-9B60-2F8AB9FD6E3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

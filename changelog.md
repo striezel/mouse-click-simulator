@@ -4,6 +4,11 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
+## Version 0.?.? (2022-10-??)
+
+Mouse click settings can now be saved, and loaded later and / or at program
+startup.
+
 ## Version 0.2.2 (2022-10-01)
 
 * The list of available target windows is loaded during startup. That way the

@@ -354,6 +354,120 @@ namespace mouse_click_simulator
         private void MainForm_Load(object sender, EventArgs e)
         {
             RefreshWindowList();
+            LoadConfiguration();
+        }
+
+        private void LoadPresetAtStartup_Click(object sender, EventArgs e)
+        {
+            tsmiLoadPresetAtStartup.Checked = !tsmiLoadPresetAtStartup.Checked;
+            ConfigurationManager.Current.LoadPresetAtStart = tsmiLoadPresetAtStartup.Checked;
+            SaveConfiguration();
+        }
+
+        private void SaveCurrentSettingsAsPreset_Click(object sender, EventArgs e)
+        {
+            StoreSettingsInPreset();
+            SaveConfiguration();
+        }
+
+
+        /// <summary>
+        /// Updates the current configuration with all currently set options.
+        /// </summary>
+        private void StoreSettingsInPreset()
+        {
+            var conf = ConfigurationManager.Current;
+            conf.LoadPresetAtStart = tsmiLoadPresetAtStartup.Checked;
+            conf.Preset.Left = cbLeftMouseButton.Checked;
+            conf.Preset.Middle = cbMiddleMouseButton.Checked;
+            conf.Preset.Right = cbRightMouseButton.Checked;
+            conf.Preset.IntervalMilliseconds = Convert.ToInt32(numericUpDownInterval.Value);
+            conf.Preset.X = Convert.ToInt32(numericUpDownCoordX.Value);
+            conf.Preset.Y = Convert.ToInt32(numericUpDownCoordY.Value);
+            conf.Preset.Synchronous = rbSynchronous.Checked;
+        }
+
+
+        /// <summary>
+        /// Updates the settings with the value from the preset.
+        /// </summary>
+        private void LoadSettingsFromPreset()
+        {
+            var conf = ConfigurationManager.Current;
+            cbLeftMouseButton.Checked = conf.Preset.Left;
+            cbMiddleMouseButton.Checked = conf.Preset.Middle;
+            cbRightMouseButton.Checked = conf.Preset.Right;
+            numericUpDownInterval.Value = conf.Preset.IntervalMilliseconds;
+            numericUpDownCoordX.Value = conf.Preset.X;
+            numericUpDownCoordY.Value = conf.Preset.Y;
+            rbSynchronous.Checked = conf.Preset.Synchronous;
+            rbAsync.Checked = !conf.Preset.Synchronous;
+        }
+
+
+        /// <summary>
+        /// Saves the current configuration to the user's profile directory.
+        /// </summary>
+        private static void SaveConfiguration()
+        {
+            var path = ConfigurationManager.GetConfigurationPath();
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                MessageBox.Show("Failed to save preset!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var directory = System.IO.Path.GetDirectoryName(path);
+            if (!System.IO.Directory.Exists(directory))
+            {
+                try
+                {
+                    System.IO.Directory.CreateDirectory(directory);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Could not create directory to save the configuration!"
+                        + Environment.NewLine + ex.Message, "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            if (!ConfigurationManager.Current.SaveToFile(path))
+            {
+                MessageBox.Show("Could not save the configuration!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Configuration was saved successfully.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void LoadConfiguration()
+        {
+            var path = ConfigurationManager.GetConfigurationPath();
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return;
+            }
+            if (!System.IO.File.Exists(path))
+            {
+                ConfigurationManager.Current = ConfigurationManager.Default;
+                return;
+            }
+            if (!ConfigurationManager.Current.LoadFromFile(path))
+            {
+                MessageBox.Show("Could not load the configuration!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            tsmiLoadPresetAtStartup.Checked = ConfigurationManager.Current.LoadPresetAtStart;
+            if (ConfigurationManager.Current.LoadPresetAtStart)
+            {
+                LoadSettingsFromPreset();
+            }
         }
     }
 }
