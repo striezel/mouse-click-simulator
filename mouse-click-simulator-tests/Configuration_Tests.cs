@@ -118,6 +118,7 @@ namespace mouse_click_simulator_tests
                 LoadPresetAtStart = true,
                 Preset =
                 {
+                    WindowCaption = "Example Window Text",
                     Left = false,
                     Middle = true,
                     Right = true,
@@ -135,6 +136,7 @@ namespace mouse_click_simulator_tests
                 var loaded = new Configuration();
                 Assert.IsTrue(loaded.LoadFromFile(path));
                 Assert.AreEqual(conf.LoadPresetAtStart, loaded.LoadPresetAtStart);
+                Assert.AreEqual(conf.Preset.WindowCaption, loaded.Preset.WindowCaption);
                 Assert.AreEqual(conf.Preset.Left, loaded.Preset.Left);
                 Assert.AreEqual(conf.Preset.Middle, loaded.Preset.Middle);
                 Assert.AreEqual(conf.Preset.Right, loaded.Preset.Right);

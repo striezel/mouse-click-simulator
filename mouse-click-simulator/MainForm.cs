@@ -134,6 +134,8 @@ namespace mouse_click_simulator
         /// Returns null, if an error occurred.</returns>
         private WindowData? GetSelectedWindowData()
         {
+            if (lbWindows.SelectedIndex == -1)
+                return null;
             object item = lbWindows.SelectedItem;
             if (item.GetType().FullName != typeof(WindowData).FullName)
             {
@@ -141,6 +143,31 @@ namespace mouse_click_simulator
             }
             return (WindowData)item;
         }
+
+
+        /// <summary>
+        /// Finds the first window with a given caption in the window list.
+        /// </summary>
+        /// <param name="caption">the caption of the window</param>
+        /// <returns>Returns the zero-based index of the item, if a match was found.
+        /// Returns -1, if no match was found.</returns>
+        private int GetWindowIndexByCaption(string caption)
+        {
+            for (int i = 0; i < lbWindows.Items.Count; i++)
+            {
+                var item = lbWindows.Items[i];
+                if (item is not WindowData)
+                {
+                    continue;
+                }
+                var data = (WindowData)item;
+                if (data.Caption == caption)
+                    return i;
+            }
+            // Not found.
+            return -1;
+        }
+
 
         private void AdjustClickCoordinatesToWindowRectangle(WinApi.RECT rectangle)
         {
@@ -378,6 +405,8 @@ namespace mouse_click_simulator
         {
             var conf = ConfigurationManager.Current;
             conf.LoadPresetAtStart = tsmiLoadPresetAtStartup.Checked;
+            var window = GetSelectedWindowData();
+            conf.Preset.WindowCaption = window.HasValue ? window.Value.Caption : "";
             conf.Preset.Left = cbLeftMouseButton.Checked;
             conf.Preset.Middle = cbMiddleMouseButton.Checked;
             conf.Preset.Right = cbRightMouseButton.Checked;
@@ -394,6 +423,12 @@ namespace mouse_click_simulator
         private void LoadSettingsFromPreset()
         {
             var conf = ConfigurationManager.Current;
+            if (!string.IsNullOrWhiteSpace(conf.Preset.WindowCaption))
+            {
+                int idx = GetWindowIndexByCaption(conf.Preset.WindowCaption);
+                if (idx >= 0)
+                    lbWindows.SelectedIndex = idx;
+            }
             cbLeftMouseButton.Checked = conf.Preset.Left;
             cbMiddleMouseButton.Checked = conf.Preset.Middle;
             cbRightMouseButton.Checked = conf.Preset.Right;

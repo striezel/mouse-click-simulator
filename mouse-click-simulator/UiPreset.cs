@@ -28,6 +28,8 @@ namespace mouse_click_simulator
         /// </summary>
         public UiPreset()
         {
+            WindowCaption = string.Empty;
+            
             Left = true;
             Middle = false;
             Right = false;
@@ -39,6 +41,11 @@ namespace mouse_click_simulator
 
             Synchronous = true;
         }
+
+        /// <summary>
+        /// Caption of the selected window, or empty string.
+        /// </summary>
+        public string WindowCaption { get; set; }
 
         /// <summary>
         /// Whether the left mouse button option is checked.
