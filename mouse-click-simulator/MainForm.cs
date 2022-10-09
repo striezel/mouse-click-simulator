@@ -361,13 +361,13 @@ namespace mouse_click_simulator
         {
             tsmiLoadPresetAtStartup.Checked = !tsmiLoadPresetAtStartup.Checked;
             ConfigurationManager.Current.LoadPresetAtStart = tsmiLoadPresetAtStartup.Checked;
-            SaveConfiguration();
+            SaveConfiguration(SuccessDialog.Hide);
         }
 
         private void SaveCurrentSettingsAsPreset_Click(object sender, EventArgs e)
         {
             StoreSettingsInPreset();
-            SaveConfiguration();
+            SaveConfiguration(SuccessDialog.Show);
         }
 
 
@@ -404,11 +404,28 @@ namespace mouse_click_simulator
             rbAsync.Checked = !conf.Preset.Synchronous;
         }
 
+        
+        /// <summary>
+        /// Indicates whether a message shall be displayed when saving succeeded.
+        /// </summary>
+        enum SuccessDialog
+        {
+            /// <summary>
+            /// Hide success dialog.
+            /// </summary>
+            Hide,
+
+            /// <summary>
+            /// Show success dialog.
+            /// </summary>
+            Show
+        }
+
 
         /// <summary>
         /// Saves the current configuration to the user's profile directory.
         /// </summary>
-        private static void SaveConfiguration()
+        private static void SaveConfiguration(SuccessDialog hide_show)
         {
             var path = ConfigurationManager.GetConfigurationPath();
             if (string.IsNullOrWhiteSpace(path))
@@ -437,7 +454,7 @@ namespace mouse_click_simulator
                 MessageBox.Show("Could not save the configuration!", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (hide_show == SuccessDialog.Show)
             {
                 MessageBox.Show("Configuration was saved successfully.",
                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
