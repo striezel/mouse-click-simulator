@@ -18,6 +18,7 @@
 
 using System;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace mouse_click_simulator
@@ -54,7 +55,12 @@ namespace mouse_click_simulator
             try
             {
                 var serializer = new XmlSerializer(typeof(Configuration));
-                TextWriter writer = new StreamWriter(path);
+                var settings = new XmlWriterSettings()
+                {
+                    Indent = true,
+                    Encoding = System.Text.Encoding.UTF8
+                };
+                var writer = XmlWriter.Create(path, settings);
                 serializer.Serialize(writer, this);
                 writer.Close();
                 return true;
