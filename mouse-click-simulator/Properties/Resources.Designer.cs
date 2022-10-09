@@ -123,6 +123,26 @@ namespace mouse_click_simulator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disk {
+            get {
+                object obj = ResourceManager.GetObject("disk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_horizontal_open {
+            get {
+                object obj = ResourceManager.GetObject("folder-horizontal-open", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Fugue Icons 3.5.6 by Yusuke Kamiyamane &lt;http://p.yusukekamiyamane.com/&gt;.
         ///Licensed under a Creative Commons Attribution 3.0 License.
         /// ähnelt.
@@ -134,7 +154,7 @@ namespace mouse_click_simulator.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2022-09-18 17:58:53 +0200
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2022-10-09 10:59:33 +0200
         /// ähnelt.
         /// </summary>
         internal static string git_date {
@@ -144,7 +164,7 @@ namespace mouse_click_simulator.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die v0.2.0-4-g60eaff4
+        ///   Sucht eine lokalisierte Zeichenfolge, die v0.2.2-7-g634b2f9
         /// ähnelt.
         /// </summary>
         internal static string git_description {
@@ -154,7 +174,7 @@ namespace mouse_click_simulator.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 60eaff4d26a27553551eff27b719b81592f7aac3
+        ///   Sucht eine lokalisierte Zeichenfolge, die 634b2f9ce2d1dabec5e42a16d66986ad7083319d
         /// ähnelt.
         /// </summary>
         internal static string git_hash {

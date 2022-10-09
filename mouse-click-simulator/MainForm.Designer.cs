@@ -420,6 +420,7 @@ namespace mouse_click_simulator
             // 
             // tsmiSaveCurrentSettingsAsPreset
             // 
+            this.tsmiSaveCurrentSettingsAsPreset.Image = global::mouse_click_simulator.Properties.Resources.disk;
             this.tsmiSaveCurrentSettingsAsPreset.Name = "tsmiSaveCurrentSettingsAsPreset";
             this.tsmiSaveCurrentSettingsAsPreset.Size = new System.Drawing.Size(232, 22);
             this.tsmiSaveCurrentSettingsAsPreset.Text = "Save current settings as preset";
@@ -427,6 +428,7 @@ namespace mouse_click_simulator
             // 
             // tsmiLoadPresetNow
             // 
+            this.tsmiLoadPresetNow.Image = global::mouse_click_simulator.Properties.Resources.folder_horizontal_open;
             this.tsmiLoadPresetNow.Name = "tsmiLoadPresetNow";
             this.tsmiLoadPresetNow.Size = new System.Drawing.Size(232, 22);
             this.tsmiLoadPresetNow.Text = "Load preset now";
