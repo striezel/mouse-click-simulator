@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog" Version="5.1.5" />
-    <PackageReference Include="NLog.Windows.Forms" Version="5.0.0" />
+    <PackageReference Include="NLog" Version="5.2.0" />
+    <PackageReference Include="NLog.Windows.Forms" Version="5.2.0" />
   </ItemGroup>
 
 </Project>
