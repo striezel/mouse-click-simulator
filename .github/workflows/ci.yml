@@ -75,6 +75,10 @@ jobs:
         copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.dll mouse-click-simulator-%VERSION%
         copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.runtimeconfig.json mouse-click-simulator-%VERSION%
         copy LICENSE mouse-click-simulator-%VERSION%
+        md mouse-click-simulator-%VERSION%\documentation
+        copy readme.md mouse-click-simulator-%VERSION%\documentation
+        copy changelog.md mouse-click-simulator-%VERSION%\documentation
+        copy screenshot.png mouse-click-simulator-%VERSION%\documentation
         "C:\Program Files\7-Zip\7z.exe" a -r mouse-click-simulator_%VERSION%.zip mouse-click-simulator-%VERSION%
 
     - name: Upload zipped updater
