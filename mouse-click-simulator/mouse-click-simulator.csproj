@@ -8,11 +8,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>disable</ImplicitUsings>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <Copyright>Copyright (C) 2022 Dirk Stolle</Copyright>
+    <Copyright>Copyright (C) 2022, 2024 Dirk Stolle</Copyright>
     <Description>Emulates mouse clicks on arbitrary windows.</Description>
     <Authors>Dirk Stolle</Authors>
-    <AssemblyVersion>0.3.0.0</AssemblyVersion>
-    <FileVersion>0.3.0.0</FileVersion>
+    <AssemblyVersion>0.3.1.0</AssemblyVersion>
+    <FileVersion>0.3.1.0</FileVersion>
     <PackageProjectUrl>https://github.com/striezel/mouse-click-simulator</PackageProjectUrl>
     <StartupObject>mouse_click_simulator.Program</StartupObject>
   </PropertyGroup>

@@ -4,7 +4,7 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
-## Version 0.?.? (2024-01-??)
+## Version 0.3.1 (2024-01-27)
 
 New releases do now provide an installer-less ZIP file, too.
 (However, you can still use the installer executable, if you prefer that.)
