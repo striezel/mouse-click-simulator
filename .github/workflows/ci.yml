@@ -24,6 +24,8 @@ jobs:
     steps:
     - name: Code checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Install .NET
       uses: actions/setup-dotnet@v4
@@ -49,14 +51,35 @@ jobs:
 
     - name: Create installer
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      # Running custom commands / executables is unnecessarily complicated in
-      # PowerShell, so I guess we have to do it that way.
+      shell: cmd
       run: |
-        $command = '"C:\Program Files (x86)\Inno Setup 6\iscc.exe" "setup\setup.iss"'
-        Invoke-Expression "& $command"
+        "C:\Program Files (x86)\Inno Setup 6\iscc.exe" "setup\setup.iss"
+        for /f %%i IN ('git describe --always') do set "VERSION=%%i"
+        echo Version is %VERSION%.
+        move output\mouse-click-simulator_setup.exe output\mouse-click-simulator_setup_%VERSION%.exe
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: installer-dotnet-${{ matrix.dotnet }}
         path: output\*.exe
+
+    - name: Create ZIP file
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      shell: cmd
+      run: |
+        for /f %%i IN ('git describe --always') do set "VERSION=%%i"
+        echo Version is %VERSION%.
+        md mouse-click-simulator-%VERSION%
+        copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.exe mouse-click-simulator-%VERSION%
+        copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.dll mouse-click-simulator-%VERSION%
+        copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.runtimeconfig.json mouse-click-simulator-%VERSION%
+        copy LICENSE mouse-click-simulator-%VERSION%
+        "C:\Program Files\7-Zip\7z.exe" a -r mouse-click-simulator_%VERSION%.zip mouse-click-simulator-%VERSION%
+
+    - name: Upload zipped updater
+      uses: actions/upload-artifact@v4
+      with:
+        name: mouse-click-simulator-zipped-${{ matrix.dotnet }}
+        if-no-files-found: error
+        path: mouse-click-simulator*.zip
