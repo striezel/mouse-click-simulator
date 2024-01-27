@@ -19,7 +19,7 @@ clicks to other application windows.
 
 To install the program, take a look at the
 [available releases](https://github.com/striezel/mouse-click-simulator/releases)
-and download the installer of the newest version from there.
+and download the installer or ZIP file of the newest version from there.
 
 ## Version history
 
@@ -27,7 +27,7 @@ A changelog is available in [changelog.md](./changelog.md).
 
 ## Copyright and Licensing
 
-Copyright 2022  Dirk Stolle
+Copyright 2022, 2024  Dirk Stolle
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -4,6 +4,11 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
+## Version 0.?.? (2024-01-??)
+
+New releases do now provide an installer-less ZIP file, too.
+(However, you can still use the installer executable, if you prefer that.)
+
 ## Version 0.3.0 (2022-10-09)
 
 Mouse click settings can now be saved, and loaded later and / or at program
