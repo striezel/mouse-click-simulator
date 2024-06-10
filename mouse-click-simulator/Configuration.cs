@@ -1,6 +1,6 @@
 ﻿/*
     This file is part of the mouse click simulator.
-    Copyright (C) 2022  Dirk Stolle
+    Copyright (C) 2022, 2024  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,6 +23,9 @@ using System.Xml.Serialization;
 
 namespace mouse_click_simulator
 {
+    /// <summary>
+    /// Holds configuration values of the program.
+    /// </summary>
     public class Configuration
     {
         /// <summary>
@@ -83,7 +86,7 @@ namespace mouse_click_simulator
             {
                 var serializer = new XmlSerializer(typeof(Configuration));
                 var stream = new FileStream(path, FileMode.Open);
-                Configuration data = (Configuration)serializer.Deserialize(stream);
+                Configuration? data = (Configuration?)serializer.Deserialize(stream);
                 stream.Close();
                 if (data == null)
                     return false;
