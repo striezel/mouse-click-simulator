@@ -82,7 +82,7 @@ namespace mouse_click_simulator_tests
 
 
         /// <summary>
-        /// Checks whether a configuration can be saved to a file.
+        /// Checks whether a configuration can be loaded from a non-existent file.
         /// </summary>
         [TestMethod]
         public void LoadFromFile_Failure()
