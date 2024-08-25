@@ -43,7 +43,7 @@ namespace mouse_click_simulator
             catch
             {
                 return null;
-            }   
+            }
         }
 
 

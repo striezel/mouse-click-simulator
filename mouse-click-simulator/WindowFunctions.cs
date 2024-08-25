@@ -30,7 +30,6 @@ namespace mouse_click_simulator
     /// </summary>
     internal static class WindowFunctions
     {
-        
         /// <summary>
         /// Determines whether there data contains enough information to keep
         /// it in the list of available windows.

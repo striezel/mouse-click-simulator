@@ -36,12 +36,12 @@ namespace mouse_click_simulator
             LoadPresetAtStart = false;
             Preset = new UiPreset();
         }
-        
+
         /// <summary>
         /// Whether to load the preset at program start.
         /// </summary>
         public bool LoadPresetAtStart { get; set; }
-        
+
         /// <summary>
         /// The configured UI preset.
         /// </summary>

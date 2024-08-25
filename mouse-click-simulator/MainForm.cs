@@ -439,7 +439,7 @@ namespace mouse_click_simulator
             rbAsync.Checked = !conf.Preset.Synchronous;
         }
 
-        
+
         /// <summary>
         /// Indicates whether a message shall be displayed when saving succeeded.
         /// </summary>

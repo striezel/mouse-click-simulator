@@ -29,7 +29,7 @@ namespace mouse_click_simulator_tests
         {
             return Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         }
-        
+
 
         /// <summary>
         /// Checks whether a configuration can be saved to a file.

@@ -21,7 +21,7 @@ namespace mouse_click_simulator
     /// <summary>
     /// Contains data for a UI preset of selected options.
     /// </summary>
-    public  class UiPreset
+    public class UiPreset
     {
         /// <summary>
         /// Creates an UiPreset instance with default values.
@@ -29,7 +29,7 @@ namespace mouse_click_simulator
         public UiPreset()
         {
             WindowCaption = string.Empty;
-            
+
             Left = true;
             Middle = false;
             Right = false;
