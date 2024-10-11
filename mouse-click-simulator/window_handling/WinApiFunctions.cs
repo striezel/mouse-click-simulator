@@ -80,10 +80,25 @@ namespace mouse_click_simulator.window_handling
                 + r.bottom.ToString() + " }";
         }
 
+
+        /// <summary>
+        /// Message type constants for use with WinAPI's SendMessage() function.
+        /// </summary>
         internal enum WMConstants
         {
+            // window caption
+            /// <summary>
+            /// Copies the text that corresponds to a window into a buffer
+            /// provided by the caller.
+            /// </summary>
             WM_GETTEXT = 0x000D,
+
+            /// <summary>
+            /// Determines the length of the text associated with a window
+            /// (in characters, not bytes).
+            /// </summary>
             WM_GETTEXTLENGTH = 0x000E,
+
             // left mouse button
             WM_LBUTTONDOWN = 0x0201,
             WM_LBUTTONUP = 0x0202,
