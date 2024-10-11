@@ -1,0 +1,14 @@
+# Use the official .NET image, based on Debian.
+# See https://hub.docker.com/_/microsoft-dotnet-sdk/ for more info.
+image: mcr.microsoft.com/dotnet/sdk:6.0
+
+build:
+  stage: build
+  before_script:
+    - apt-get update && apt-get -y install git
+  script: 
+    # Restore any NuGet packages.
+    - dotnet restore -p:Configuration=Release -p:EnableWindowsTargeting=true mouse-click-simulator.sln
+    # Build mouse-click-simulator and the test project.
+    - dotnet build -p:Configuration=Release -p:EnableWindowsTargeting=true mouse-click-simulator.sln
+    # Note: Tests can only be run properly on a Windows OS.
