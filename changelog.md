@@ -6,8 +6,10 @@ improvements may be omitted.)_
 
 ## Next Version (2024-10-??)
 
-The application icon is now properly set. (It's the same as the main window of
-the application - a mouse icon.)
+* The application icon is now properly set. (It's the same as the main window of
+  the application - a mouse icon.)
+* The window list will now have a horizontal scrollbar, if that is necessary to
+  show longer texts.
 
 ## Version 0.3.1 (2024-01-27)
 

@@ -1,6 +1,6 @@
 ﻿/*
     This file is part of the mouse click simulator.
-    Copyright (C) 2022  Dirk Stolle
+    Copyright (C) 2022, 2024  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -110,6 +110,7 @@ namespace mouse_click_simulator
             lbWindows.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbWindows.Enabled = false;
             lbWindows.FormattingEnabled = true;
+            lbWindows.HorizontalScrollbar = true;
             lbWindows.ItemHeight = 15;
             lbWindows.Items.AddRange(new object[] { "Click the button above to get a list of available windows." });
             lbWindows.Location = new System.Drawing.Point(6, 51);
