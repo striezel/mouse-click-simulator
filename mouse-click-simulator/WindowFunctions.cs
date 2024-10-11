@@ -74,7 +74,10 @@ namespace mouse_click_simulator
         {
             var captionBuilder = new StringBuilder(1024);
             var classNameBuilder = new StringBuilder(1024);
-            WinApi.GetWindowText(handleToWindow, captionBuilder, captionBuilder.Capacity);
+            if (WinApi.GetWindowText(handleToWindow, captionBuilder, captionBuilder.Capacity) == 0)
+            {
+                captionBuilder.Clear();
+            }
             if (WinApi.GetClassName(handleToWindow, classNameBuilder, classNameBuilder.Capacity) == 0)
             {
                 classNameBuilder.Clear();
@@ -91,8 +94,10 @@ namespace mouse_click_simulator
             else
             {
                 captionBuilder = new StringBuilder(Convert.ToInt32(WinApi.SendMessage(data.Handle, WinApi.WMConstants.WM_GETTEXTLENGTH, IntPtr.Zero, IntPtr.Zero)) + 1);
-                WinApi.SendMessage(data.Handle, WinApi.WMConstants.WM_GETTEXT, captionBuilder.Capacity, captionBuilder);
-                data.Caption = captionBuilder.ToString();
+                if (WinApi.SendMessage(data.Handle, WinApi.WMConstants.WM_GETTEXT, captionBuilder.Capacity, captionBuilder) != 0)
+                {
+                    data.Caption = captionBuilder.ToString();
+                }
             }
             return data;
         }
