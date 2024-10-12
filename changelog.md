@@ -4,7 +4,7 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
-## Next Version (2024-10-??)
+## Version 0.3.2 (2024-10-12)
 
 * The application icon is now properly set. (It's the same as the main window of
   the application - a mouse icon.)
