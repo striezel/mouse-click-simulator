@@ -10,6 +10,9 @@ improvements may be omitted.)_
   the application - a mouse icon.)
 * The window list will now have a horizontal scrollbar, if that is necessary to
   show longer texts.
+* A bug is fixed that could cause the application to crash when loading a preset
+  from the configuration file, if the configuration file contained values that
+  were outside of the allowed range.
 
 ## Version 0.3.1 (2024-01-27)
 

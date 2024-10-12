@@ -1,6 +1,6 @@
 /*
     This file is part of the mouse click simulator.
-    Copyright (C) 2022  Dirk Stolle
+    Copyright (C) 2022, 2024  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -432,9 +432,9 @@ namespace mouse_click_simulator
             cbLeftMouseButton.Checked = conf.Preset.Left;
             cbMiddleMouseButton.Checked = conf.Preset.Middle;
             cbRightMouseButton.Checked = conf.Preset.Right;
-            numericUpDownInterval.Value = conf.Preset.IntervalMilliseconds;
-            numericUpDownCoordX.Value = conf.Preset.X;
-            numericUpDownCoordY.Value = conf.Preset.Y;
+            numericUpDownInterval.Value = Math.Clamp(conf.Preset.IntervalMilliseconds, numericUpDownInterval.Minimum, numericUpDownInterval.Maximum);
+            numericUpDownCoordX.Value = Math.Clamp(conf.Preset.X, numericUpDownCoordX.Minimum, numericUpDownCoordX.Maximum);
+            numericUpDownCoordY.Value = Math.Clamp(conf.Preset.Y, numericUpDownCoordY.Minimum, numericUpDownCoordY.Maximum);
             rbSynchronous.Checked = conf.Preset.Synchronous;
             rbAsync.Checked = !conf.Preset.Synchronous;
         }
