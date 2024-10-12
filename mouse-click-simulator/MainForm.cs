@@ -470,6 +470,12 @@ namespace mouse_click_simulator
                 return;
             }
             var directory = System.IO.Path.GetDirectoryName(path);
+            if (string.IsNullOrEmpty(directory))
+            {
+                MessageBox.Show("Could not determine directory path to save the configuration!",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!System.IO.Directory.Exists(directory))
             {
                 try
