@@ -1,6 +1,6 @@
 ﻿/*
     This file is part of the mouse click simulator.
-    Copyright (C) 2022  Dirk Stolle
+    Copyright (C) 2022, 2024  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ namespace mouse_click_simulator
             LoadVersionData();
             LoadGitData();
             LoadRuntimeData();
-            LoadLicenseData();
+            LoadThirdPartyLicenseData();
         }
 
 
@@ -93,7 +93,7 @@ namespace mouse_click_simulator
         /// Loads the license information of third party components into the
         /// corresponding GUI element.
         /// </summary>
-        private void LoadLicenseData()
+        private void LoadThirdPartyLicenseData()
         {
             var cc_by_3_0 = Properties.Resources.cc_by_3_0_legalcode;
             rtbLicenses.Text = Properties.Resources.fugue_intro + cc_by_3_0;
