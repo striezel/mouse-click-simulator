@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblLicense.Text" xml:space="preserve">
+    <value>Copyright (C) 2022, 2024  Dirk Stolle
+License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it under the terms of the GNU General Public License version 3 or any later version. There is NO WARRANTY, to the extent permitted by law.</value>
+  </data>
 </root>

@@ -39,6 +39,7 @@
             lblCommitData = new System.Windows.Forms.Label();
             lblCommit = new System.Windows.Forms.Label();
             gbProgram = new System.Windows.Forms.GroupBox();
+            lblLicense = new System.Windows.Forms.Label();
             lblTitle = new System.Windows.Forms.Label();
             lblVersion = new System.Windows.Forms.Label();
             lblVersionData = new System.Windows.Forms.Label();
@@ -86,7 +87,6 @@
             // 
             // gbGit
             // 
-            this.gbGit.Location = new System.Drawing.Point(6, 99);
             gbGit.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             gbGit.Controls.Add(lblDescriptionData);
             gbGit.Controls.Add(lblDescription);
@@ -94,6 +94,7 @@
             gbGit.Controls.Add(lblDate);
             gbGit.Controls.Add(lblCommitData);
             gbGit.Controls.Add(lblCommit);
+            gbGit.Location = new System.Drawing.Point(6, 132);
             gbGit.Name = "gbGit";
             gbGit.Size = new System.Drawing.Size(756, 112);
             gbGit.TabIndex = 11;
@@ -156,16 +157,26 @@
             // 
             // gbProgram
             // 
-            this.gbProgram.Size = new System.Drawing.Size(756, 87);
             gbProgram.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            gbProgram.Controls.Add(lblLicense);
             gbProgram.Controls.Add(lblTitle);
             gbProgram.Controls.Add(lblVersion);
             gbProgram.Controls.Add(lblVersionData);
             gbProgram.Location = new System.Drawing.Point(6, 6);
             gbProgram.Name = "gbProgram";
+            gbProgram.Size = new System.Drawing.Size(756, 120);
             gbProgram.TabIndex = 10;
             gbProgram.TabStop = false;
             gbProgram.Text = "Program information:";
+            // 
+            // lblLicense
+            // 
+            lblLicense.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblLicense.Location = new System.Drawing.Point(231, 19);
+            lblLicense.Name = "lblLicense";
+            lblLicense.Size = new System.Drawing.Size(519, 98);
+            lblLicense.TabIndex = 3;
+            lblLicense.Text = resources.GetString("lblLicense.Text");
             // 
             // lblTitle
             // 
@@ -196,7 +207,6 @@
             // 
             // gbRuntimeInformation
             // 
-            this.gbRuntimeInformation.Location = new System.Drawing.Point(6, 217);
             gbRuntimeInformation.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             gbRuntimeInformation.Controls.Add(lblDotNet);
             gbRuntimeInformation.Controls.Add(lblArchitectureData);
@@ -204,6 +214,7 @@
             gbRuntimeInformation.Controls.Add(lblOperatingSystemData);
             gbRuntimeInformation.Controls.Add(lblOperatingSystem);
             gbRuntimeInformation.Controls.Add(lblArchitecture);
+            gbRuntimeInformation.Location = new System.Drawing.Point(6, 250);
             gbRuntimeInformation.Name = "gbRuntimeInformation";
             gbRuntimeInformation.Size = new System.Drawing.Size(756, 108);
             gbRuntimeInformation.TabIndex = 9;
@@ -343,5 +354,6 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblCommitData;
         private System.Windows.Forms.Label lblCommit;
+        private System.Windows.Forms.Label lblLicense;
     }
 }
