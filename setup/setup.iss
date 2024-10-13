@@ -11,7 +11,7 @@ AppPublisher=Dirk Stolle
 AppPublisherURL=https://github.com/striezel/mouse-click-simulator
 AppSupportURL=https://github.com/striezel/mouse-click-simulator
 AppUpdatesURL=https://github.com/striezel/mouse-click-simulator
-DefaultDirName={pf}\mouse-click-simulator
+DefaultDirName={commonpf}\mouse-click-simulator
 DisableDirPage=no
 DefaultGroupName=Mouse Click Simulator
 DisableProgramGroupPage=no
@@ -21,6 +21,7 @@ Compression=lzma
 SolidCompression=yes
 ; icon for installer
 SetupIconFile=..\mouse-click-simulator\icons\fugue\mouse.ico
+WizardStyle=modern
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
