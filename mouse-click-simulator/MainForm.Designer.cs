@@ -395,6 +395,7 @@ namespace mouse_click_simulator
             tsmiLoadPresetNow.Name = "tsmiLoadPresetNow";
             tsmiLoadPresetNow.Size = new System.Drawing.Size(232, 22);
             tsmiLoadPresetNow.Text = "Load preset now";
+            tsmiLoadPresetNow.Click += LoadPresetNow_Click;
             // 
             // tsmiInformation
             // 

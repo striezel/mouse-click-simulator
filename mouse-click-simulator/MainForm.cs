@@ -304,6 +304,7 @@ namespace mouse_click_simulator
             lbWindows.Enabled = enable;
             btnStart.Enabled = enable;
             btnStop.Enabled = !enable;
+            tsmiLoadPresetNow.Enabled = enable;
         }
 
 
@@ -418,7 +419,7 @@ namespace mouse_click_simulator
 
 
         /// <summary>
-        /// Updates the settings with the value from the preset.
+        /// Updates the settings with the values from the preset.
         /// </summary>
         private void LoadSettingsFromPreset()
         {
@@ -526,6 +527,11 @@ namespace mouse_click_simulator
             {
                 LoadSettingsFromPreset();
             }
+        }
+
+        private void LoadPresetNow_Click(object sender, EventArgs e)
+        {
+            LoadSettingsFromPreset();
         }
     }
 }
