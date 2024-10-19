@@ -4,6 +4,12 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
+## Version 0.?.? (2024-10-??)
+
+When the user refreshes the window list, the current selection (if any) is kept
+after the refresh, if that is possible (i. e. if the previously selected window
+is still there).
+
 ## Version 0.3.3 (2024-10-13)
 
 Fix problem that the "Load preset now" menu item was not working.

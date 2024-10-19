@@ -41,6 +41,8 @@ namespace mouse_click_simulator
         private void RefreshWindowList()
         {
             btnRefresh.Enabled = false;
+            var selection = GetSelectedWindowData();
+            var topIdx = lbWindows.TopIndex;
             try
             {
                 var list = WindowFunctions.ListWindows();
@@ -59,6 +61,17 @@ namespace mouse_click_simulator
                     foreach (var item in list)
                     {
                         lbWindows.Items.Add(item);
+                    }
+                    // Try to restore previous selection.
+                    if (selection.HasValue)
+                    {
+                        int idx = GetWindowIndexByHandle(selection.Value.Handle);
+                        if (idx != -1)
+                        {
+                            lbWindows.SelectedIndex = idx;
+                            if (topIdx < lbWindows.Items.Count)
+                                lbWindows.TopIndex = topIdx;
+                        }
                     }
                 }
                 finally
@@ -162,6 +175,30 @@ namespace mouse_click_simulator
                 }
                 var data = (WindowData)item;
                 if (data.Caption == caption)
+                    return i;
+            }
+            // Not found.
+            return -1;
+        }
+
+
+        /// <summary>
+        /// Finds the first window with a given handle in the window list.
+        /// </summary>
+        /// <param name="handle">the handle of the window</param>
+        /// <returns>Returns the zero-based index of the item, if a match was found.
+        /// Returns -1, if no match was found.</returns>
+        private int GetWindowIndexByHandle(IntPtr handle)
+        {
+            for (int i = 0; i < lbWindows.Items.Count; i++)
+            {
+                var item = lbWindows.Items[i];
+                if (item is not WindowData)
+                {
+                    continue;
+                }
+                var data = (WindowData)item;
+                if (data.Handle == handle)
                     return i;
             }
             // Not found.
