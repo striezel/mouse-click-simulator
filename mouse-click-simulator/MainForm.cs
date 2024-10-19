@@ -335,7 +335,10 @@ namespace mouse_click_simulator
             var window = w.Value;
             if (!WinApi.GetClientRect(window.Handle, out WinApi.RECT rectangle))
             {
-                MessageBox.Show("Could not get window's client area.",
+                MessageBox.Show("Could not get window's client area."
+                    + Environment.NewLine + Environment.NewLine
+                    + "Try to refresh the window list and select another window"
+                    + " to get rid of this error.",
                     "Internal error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
