@@ -1,6 +1,6 @@
 ﻿/*
     This file is part of the mouse click simulator.
-    Copyright (C) 2022  Dirk Stolle
+    Copyright (C) 2022, 2024  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -52,7 +52,8 @@ namespace mouse_click_simulator
         /// </summary>
         /// <param name="handleToWindow">handle of the window to enumerate</param>
         /// <param name="lParam">opaque pointer to WindowData list</param>
-        /// <returns>Always returns true.</returns>
+        /// <returns>Always returns true (in order to continue window
+        /// enumeration by WinAPI's EnumWindows() function).</returns>
         /// <exception cref="InvalidCastException">if lParam cannot be cast to
         /// a generic list of WindowData elements</exception>
         private static bool AddWindowToList(IntPtr handleToWindow, IntPtr lParam)
@@ -70,6 +71,14 @@ namespace mouse_click_simulator
             return true;
         }
 
+
+        /// <summary>
+        /// Gets caption and window class name of a window.
+        /// </summary>
+        /// <param name="handleToWindow">handle to the window</param>
+        /// <returns>Returns a WindowData struct filled with the relevant data.
+        /// Some elements may be empty strings, if the corresponding data could
+        /// not be retrieved.</returns>
         static WindowData GetWindowData(IntPtr handleToWindow)
         {
             var captionBuilder = new StringBuilder(1024);
@@ -102,6 +111,11 @@ namespace mouse_click_simulator
             return data;
         }
 
+
+        /// <summary>
+        /// Provides a list of all available windows.
+        /// </summary>
+        /// <returns>Returns a list of available windows.</returns>
         internal static List<WindowData>? ListWindows()
         {
             var windows = new List<WindowData>();
