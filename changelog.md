@@ -4,7 +4,7 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
-## Version 0.?.? (2024-10-??)
+## Version 0.3.4 (2024-10-21)
 
 * Microsoft's support for .NET 6 will end in November 2024. While this is still
   a few weeks in the future this also means that the program will switch from

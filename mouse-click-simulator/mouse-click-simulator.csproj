@@ -11,8 +11,8 @@
     <Copyright>Copyright (C) 2022, 2024 Dirk Stolle</Copyright>
     <Description>Emulates mouse clicks on arbitrary windows.</Description>
     <Authors>Dirk Stolle</Authors>
-    <AssemblyVersion>0.3.3.0</AssemblyVersion>
-    <FileVersion>0.3.3.0</FileVersion>
+    <AssemblyVersion>0.3.4.0</AssemblyVersion>
+    <FileVersion>0.3.4.0</FileVersion>
     <PackageProjectUrl>https://github.com/striezel/mouse-click-simulator</PackageProjectUrl>
     <StartupObject>mouse_click_simulator.Program</StartupObject>
     <ApplicationIcon>icons\fugue\mouse.ico</ApplicationIcon>
