@@ -222,9 +222,10 @@ namespace mouse_click_simulator
         /// <summary>
         /// Simulates a mouse click on a window.
         /// </summary>
-        /// <param name="window">the target window to click onto.</param>
+        /// <param name="window">the target window to click onto</param>
         /// <param name="coordinates">encoded coordinates for the click</param>
-        /// <param name="button">the mouse button to click</param>
+        /// <param name="button">the mouse button to click (only left, right
+        /// and middle mouse button are supported)</param>
         private static void SimulateMouseClick(WindowData window, IntPtr coordinates, MouseButtons button)
         {
             switch (button)
@@ -251,6 +252,13 @@ namespace mouse_click_simulator
         }
 
 
+        /// <summary>
+        /// Simulates a mouse click on a window, in an asynchronous manner.
+        /// </summary>
+        /// <param name="window">the target window to click onto</param>
+        /// <param name="coordinates">encoded coordinates for the click</param>
+        /// <param name="button">the mouse button to click (only left, right
+        /// and middle mouse button are supported)</param>
         private static void SimulateMouseClickAsync(WindowData window, IntPtr coordinates, MouseButtons button)
         {
             switch (button)
@@ -277,6 +285,11 @@ namespace mouse_click_simulator
         }
 
 
+        /// <summary>
+        /// Triggers emission of click event messages, in an asynchronous manner.
+        /// </summary>
+        /// <param name="window">the target window to click onto</param>
+        /// <param name="coordinates">encoded coordinates for the click</param>
         private void EmitClickEventsAsync(WindowData window, IntPtr coordinates)
         {
             if (cbLeftMouseButton.Checked)
@@ -294,6 +307,11 @@ namespace mouse_click_simulator
         }
 
 
+        /// <summary>
+        /// Triggers emission of click event messages.
+        /// </summary>
+        /// <param name="window">the target window to click onto</param>
+        /// <param name="coordinates">encoded coordinates for the click</param>
         private void EmitClickEventsSync(WindowData window, IntPtr coordinates)
         {
             if (cbLeftMouseButton.Checked)
