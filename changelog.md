@@ -6,9 +6,13 @@ improvements may be omitted.)_
 
 ## Version 0.?.? (2024-10-??)
 
-When the user refreshes the window list, the current selection (if any) is kept
-after the refresh, if that is possible (i. e. if the previously selected window
-is still there).
+* Microsoft's support for .NET 6 will end in November 2024. While this is still
+  a few weeks in the future this also means that the program will switch from
+  .NET 6 to .NET 8, a newer Long Term Support release of .NET, in the coming
+  weeks. Most likely this will happen with the next releases of the program.
+* When the user refreshes the window list, the current selection (if any) is
+  kept after the refresh, if that is possible (i. e. if the previously selected
+  window is still there).
 
 ## Version 0.3.3 (2024-10-13)
 
