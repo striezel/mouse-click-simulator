@@ -408,6 +408,10 @@ namespace mouse_click_simulator
 
         private void TimerClick_Tick(object sender, EventArgs e)
         {
+            if (timerClick.Tag == null)
+            {
+                return;
+            }
             EmitClickEvents((WindowData)timerClick.Tag);
         }
 
