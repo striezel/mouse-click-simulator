@@ -16,8 +16,8 @@ jobs:
     strategy:
       matrix:
         dotnet:
-          - 6.0.x
           - 8.0.x
+          - 9.0.x
     runs-on: windows-2022
 
     steps:
@@ -74,9 +74,9 @@ jobs:
         for /f %%i IN ('git describe --always') do set "VERSION=%%i"
         echo Version is %VERSION%.
         md mouse-click-simulator-%VERSION%
-        copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.exe mouse-click-simulator-%VERSION%
-        copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.dll mouse-click-simulator-%VERSION%
-        copy mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.runtimeconfig.json mouse-click-simulator-%VERSION%
+        copy mouse-click-simulator\bin\Release\net8.0-windows7.0\mouse-click-simulator.exe mouse-click-simulator-%VERSION%
+        copy mouse-click-simulator\bin\Release\net8.0-windows7.0\mouse-click-simulator.dll mouse-click-simulator-%VERSION%
+        copy mouse-click-simulator\bin\Release\net8.0-windows7.0\mouse-click-simulator.runtimeconfig.json mouse-click-simulator-%VERSION%
         copy LICENSE mouse-click-simulator-%VERSION%
         md mouse-click-simulator-%VERSION%\documentation
         copy readme.md mouse-click-simulator-%VERSION%\documentation

@@ -50,9 +50,9 @@ Name: "uk"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
 [Files]
 ;main executable
-Source: "..\mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\mouse-click-simulator\bin\Release\net6.0-windows7.0\mouse-click-simulator.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\mouse-click-simulator\bin\Release\net8.0-windows7.0\mouse-click-simulator.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\mouse-click-simulator\bin\Release\net8.0-windows7.0\mouse-click-simulator.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\mouse-click-simulator\bin\Release\net8.0-windows7.0\mouse-click-simulator.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
 ; NLog main assembly (logging)
 ; Source: "{#GetEnv('USERPROFILE')}\.nuget\packages\nlog\5.0.4\lib\netstandard2.0\NLog.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; GPL 3 license text
