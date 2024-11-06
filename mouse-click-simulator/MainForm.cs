@@ -149,7 +149,7 @@ namespace mouse_click_simulator
         {
             if (lbWindows.SelectedIndex == -1)
                 return null;
-            object item = lbWindows.SelectedItem;
+            object item = lbWindows.SelectedItem!;
             if (item.GetType().FullName != typeof(WindowData).FullName)
             {
                 return null;
