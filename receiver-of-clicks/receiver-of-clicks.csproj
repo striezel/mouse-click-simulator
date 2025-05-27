@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="NLog" Version="5.4.0" />
-    <PackageReference Include="NLog.Windows.Forms" Version="5.2.3" />
+    <PackageReference Include="NLog.Windows.Forms" Version="5.2.4" />
   </ItemGroup>
 
 </Project>
