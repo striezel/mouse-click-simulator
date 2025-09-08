@@ -49,7 +49,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: dotnet test --logger "console;verbosity=detailed" /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
-    # Inno Setup 6.3.3 is already installed on the Windows 2022 image. See
+    # Inno Setup 6.4.0 is already installed on the Windows 2022 image. See
     # <https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md>
     # for pre-installed software.
 
