@@ -63,7 +63,7 @@ jobs:
         move output\mouse-click-simulator_setup.exe output\mouse-click-simulator_setup_%VERSION%.exe
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: installer-dotnet-${{ matrix.dotnet }}
         path: output\*.exe
@@ -86,7 +86,7 @@ jobs:
         "C:\Program Files\7-Zip\7z.exe" a -r mouse-click-simulator_%VERSION%.zip mouse-click-simulator-%VERSION%
 
     - name: Upload zipped updater
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: mouse-click-simulator-zipped-${{ matrix.dotnet }}
         if-no-files-found: error
