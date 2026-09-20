@@ -4,6 +4,13 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
+## Version 0.?.? (2026-09-??)
+
+* The window caption is now shown as the first part of the entries in the window
+  list. This is more intuitive than the window handle which was shown first in
+  previous versions of the program. The window handle is now shown at the end of
+  the entries.
+
 ## Version 0.4.0 (2024-11-06)
 
 __[breaking change]__

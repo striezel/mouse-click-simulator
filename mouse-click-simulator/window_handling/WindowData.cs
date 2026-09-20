@@ -1,6 +1,6 @@
 ﻿/*
     This file is part of the mouse click simulator.
-    Copyright (C) 2022, 2024  Dirk Stolle
+    Copyright (C) 2022, 2024, 2026  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -64,7 +64,7 @@ namespace mouse_click_simulator.window_handling
         /// window class of the corresponding window.</returns>
         public override readonly string ToString()
         {
-            return "Window " + Handle.ToString() + ", \"" + Caption + "\", " + Class;
+            return "\"" + Caption + "\", " + Class + ", Window " + Handle.ToString();
         }
     }
 }
