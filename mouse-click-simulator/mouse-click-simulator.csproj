@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>disable</ImplicitUsings>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <Copyright>Copyright (C) 2022, 2024 Dirk Stolle</Copyright>
+    <Copyright>Copyright (C) 2022, 2024, 2026 Dirk Stolle</Copyright>
     <Description>Emulates mouse clicks on arbitrary windows.</Description>
     <Authors>Dirk Stolle</Authors>
     <AssemblyVersion>0.4.0.0</AssemblyVersion>
