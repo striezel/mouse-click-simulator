@@ -4,7 +4,7 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
-## Version 0.?.? (2026-09-??)
+## Version 0.4.1 (2026-09-20)
 
 * Microsoft's support for .NET 8 will end in November 2026. While this is still
   a few weeks in the future this also means that the program will switch from
