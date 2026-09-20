@@ -6,6 +6,10 @@ improvements may be omitted.)_
 
 ## Version 0.?.? (2026-09-??)
 
+* Microsoft's support for .NET 8 will end in November 2026. While this is still
+  a few weeks in the future this also means that the program will switch from
+  .NET 8 to .NET 10, a newer Long Term Support release of .NET, in the coming
+  weeks. Most likely this will happen with the next releases of the program.
 * The window caption is now shown as the first part of the entries in the window
   list. This is more intuitive than the window handle which was shown first in
   previous versions of the program. The window handle is now shown at the end of
