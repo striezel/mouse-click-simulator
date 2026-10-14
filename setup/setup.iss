@@ -10,11 +10,19 @@ AppVersion=0.5.0.0
 AppPublisher=Dirk Stolle
 AppPublisherURL=https://github.com/striezel/mouse-click-simulator
 AppSupportURL=https://github.com/striezel/mouse-click-simulator
-AppUpdatesURL=https://github.com/striezel/mouse-click-simulator
-DefaultDirName={commonpf}\mouse-click-simulator
+AppUpdatesURL=https://github.com/striezel/mouse-click-simulator/releases
+DefaultDirName={autopf}\mouse-click-simulator
 DisableDirPage=no
 DefaultGroupName=Mouse Click Simulator
 DisableProgramGroupPage=no
+UninstallDisplayIcon={app}\mouse-click-simulator.exe
+ArchitecturesAllowed=x64compatible
+; "ArchitecturesInstallIn64BitMode=x64compatible" requests that the
+; install be done in "64-bit mode" on x64 or Windows 11 on Arm,
+; meaning it should use the native 64-bit Program Files directory and
+; the 64-bit view of the registry.
+ArchitecturesInstallIn64BitMode=x64compatible
+PrivilegesRequiredOverridesAllowed=commandline dialog
 OutputDir=..\output
 OutputBaseFilename=mouse-click-simulator_setup
 Compression=lzma

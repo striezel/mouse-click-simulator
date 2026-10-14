@@ -4,6 +4,12 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
+## Version 0.?.? (2026-10-??)
+
+* The installer will now allow privileged and unprivileged installations, i. e.
+  installing for all users on the system (as before) or only installing for the
+  current user.
+
 ## Version 0.5.0 (2026-10-14)
 
 __[breaking change]__
