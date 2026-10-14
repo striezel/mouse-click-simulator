@@ -27,7 +27,7 @@ namespace receiver_of_clicks
     public partial class ReceiverForm : Form
     {
         /// <summary>
-        /// NLog.Logger for Program
+        /// NLog.Logger for ReceiverForm
         /// </summary>
         private static readonly NLog.Logger logger = NLog.LogManager.GetLogger(typeof(ReceiverForm).FullName);
 
