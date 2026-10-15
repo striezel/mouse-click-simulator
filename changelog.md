@@ -4,7 +4,7 @@ _(Note: This changelog focuses on the major changes between the different
 versions. Therefore, it may not contain all changes. Especially smaller fixes or
 improvements may be omitted.)_
 
-## Version 0.?.? (2026-10-??)
+## Version 0.6.0 (2026-10-15)
 
 * __[breaking change]__
   This version does now require .NET 10 instead of .NET 8 or 9, as in previous
