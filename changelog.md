@@ -6,6 +6,14 @@ improvements may be omitted.)_
 
 ## Version 0.?.? (2026-10-??)
 
+* __[breaking change]__
+  This version does now require .NET 10 instead of .NET 8 or 9, as in previous
+  versions.
+  Reason for that change is that Microsoft will end support for .NET 8 and 9 on
+  10th November 2026. From that date onwards, .NET 8 and 9 will not receive any
+  maintenance or security fixes, so this application is switching to .NET 10,
+  the current Long Term Support release of .NET.
+
 * The installer will now allow privileged and unprivileged installations, i. e.
   installing for all users on the system (as before) or only installing for the
   current user.
