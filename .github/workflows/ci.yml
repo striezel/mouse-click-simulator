@@ -17,7 +17,7 @@ jobs:
       matrix:
         dotnet:
           - 10.0.x
-    runs-on: windows-2022
+    runs-on: windows-2025-vs2026
 
     steps:
     - name: Code checkout
@@ -48,8 +48,8 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: dotnet test --logger "console;verbosity=detailed" /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
-    # Inno Setup 6.7.1 is already installed on the Windows 2022 image. See
-    # <https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md>
+    # Inno Setup 6.7.1 is already installed on the Windows 2025 VS 2026 image. See
+    # <https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md>
     # for pre-installed software.
 
     - name: Create installer
